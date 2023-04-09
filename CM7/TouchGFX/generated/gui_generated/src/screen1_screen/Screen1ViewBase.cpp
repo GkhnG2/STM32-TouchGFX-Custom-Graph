@@ -246,7 +246,7 @@ Screen1ViewBase::Screen1ViewBase()
     dynamicGraph1.addDataPoint(21.6574f);
     add(dynamicGraph1);
 
-    customGraph1.setXY(480, 268);
+    customGraph1.setXY(480, 254);
     add(customGraph1);
 }
 

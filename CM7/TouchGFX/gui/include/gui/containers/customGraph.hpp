@@ -10,7 +10,7 @@ public:
     virtual ~customGraph() {}
 
     virtual void initialize();
-    void addData(int y);
+    void addPoint(float y);
 protected:
 };
 

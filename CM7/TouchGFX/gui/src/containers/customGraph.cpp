@@ -11,7 +11,8 @@ void customGraph::initialize()
 }
 
 
-void customGraph::addData(int y)
+void customGraph::addPoint(float y)
 {
     customGraphBase::dynamicGraph1.addDataPoint(y);
+    customGraphBase::dynamicGraph1.setGraphRangeYAuto(true,5);
 }

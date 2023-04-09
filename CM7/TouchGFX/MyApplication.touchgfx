@@ -329,7 +329,7 @@
             "Type": "CustomContainerInstance",
             "Name": "customGraph1",
             "X": 480,
-            "Y": 268,
+            "Y": 254,
             "Width": 310,
             "Height": 200,
             "CustomContainerDefinitionName": "customGraph"
@@ -367,7 +367,10 @@
             "LastIndex": 99,
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
-            "GraphType": "GraphWrapClear",
+            "LabelSizeTop": 11,
+            "LabelSizeBottom": 20,
+            "LabelSizeLeft": 32,
+            "GraphType": "GraphScroll",
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
@@ -389,6 +392,22 @@
               "Type": "GraphGrid",
               "Interval": 10.0,
               "LineWidth": 1
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 10.0,
+              "DecimalSeparator": "Point",
+              "TextId": "__SingleUse_TP9Y",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 10.0,
+              "DecimalSeparator": "Point",
+              "TextId": "__SingleUse_758P",
+              "TextRotation": "0",
+              "Position": "Left"
             }
           }
         ],

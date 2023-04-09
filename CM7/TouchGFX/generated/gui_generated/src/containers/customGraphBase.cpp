@@ -3,6 +3,7 @@
 /*********************************************************************************/
 #include <gui_generated/containers/customGraphBase.hpp>
 #include <touchgfx/Color.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 customGraphBase::customGraphBase()
 {
@@ -14,7 +15,7 @@ customGraphBase::customGraphBase()
 
     dynamicGraph1.setPosition(0, 0, 310, 200);
     dynamicGraph1.setScale(1);
-    dynamicGraph1.setGraphAreaMargin(0, 0, 0, 0);
+    dynamicGraph1.setGraphAreaMargin(11, 32, 0, 20);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph1.setGraphRangeY(0, 100);
     dynamicGraph1MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -28,6 +29,18 @@ customGraphBase::customGraphBase()
     dynamicGraph1MajorYAxisGrid.setLineWidth(1);
     dynamicGraph1MajorYAxisGrid.setScale(1);
     dynamicGraph1.addGraphElement(dynamicGraph1MajorYAxisGrid);
+
+    dynamicGraph1MajorXAxisLabel.setInterval(10);
+    dynamicGraph1MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_TP9Y));
+    dynamicGraph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    dynamicGraph1MajorXAxisLabel.setScale(1);
+    dynamicGraph1.addBottomElement(dynamicGraph1MajorXAxisLabel);
+
+    dynamicGraph1MajorYAxisLabel.setInterval(10);
+    dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_758P));
+    dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    dynamicGraph1MajorYAxisLabel.setScale(1);
+    dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
 
     dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph1Line1.setPainter(dynamicGraph1Line1Painter);

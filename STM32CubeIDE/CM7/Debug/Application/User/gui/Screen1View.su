@@ -1,7 +1,7 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:14:6:virtual void Screen1View::tearDownScreen()	0	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:19:6:virtual void Screen1View::handleTickEvent()	40	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:19:6:virtual void Screen1View::handleTickEvent()	32	static
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:11:13:Screen1View::~Screen1View()	8	static
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:11:13:virtual Screen1View::~Screen1View()	8	static
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:4:1:Screen1View::Screen1View()	8	static

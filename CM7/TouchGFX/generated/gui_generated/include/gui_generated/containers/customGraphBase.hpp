@@ -7,8 +7,9 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
+#include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 
 class customGraphBase : public touchgfx::Container
@@ -27,9 +28,11 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::GraphWrapAndClear<100> dynamicGraph1;
+    touchgfx::GraphScroll<100> dynamicGraph1;
     touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
     touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
+    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
+    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
     touchgfx::GraphElementLine dynamicGraph1Line1;
     touchgfx::PainterRGB888 dynamicGraph1Line1Painter;
 

@@ -22,6 +22,6 @@ void Screen1View::handleTickEvent()
 	if(tickCounter % 3 == 0)
 	{
 		dynamicGraph1.addDataPoint((int)(sinf(tickCounter * 0.07) + 1) * 40 + rand() % 10);
-		customGraph1.addData((int)(sinf(tickCounter * 0.07) + 1) * 40 + rand() % 10);
+		customGraph1.addPoint((sinf(tickCounter * 0.07) + 1) * 40 + rand() % 10);
 	}
 }
