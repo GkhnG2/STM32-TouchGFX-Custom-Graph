@@ -7,7 +7,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    graphDraggedCallback(this, &Screen1ViewBase::graphDraggedCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -248,6 +249,140 @@ Screen1ViewBase::Screen1ViewBase()
 
     customGraph1.setXY(480, 254);
     add(customGraph1);
+
+    graph2.setPosition(21, 312, 266, 148);
+    graph2.setScaleX(1);
+    graph2.setScaleY(1);
+    graph2.setGraphAreaMargin(12, 32, 0, 20);
+    graph2.setGraphAreaPadding(0, 0, 0, 0);
+    graph2.setGraphRangeX(-100, 100);
+    graph2.setGraphRangeY(-100, 100);
+    graph2.setDragAction(graphDraggedCallback);
+    graph2MajorXAxisLabel.setInterval(30);
+    graph2MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_AR0X));
+    graph2MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    graph2MajorXAxisLabel.setScale(1);
+    graph2.addBottomElement(graph2MajorXAxisLabel);
+
+    graph2MajorYAxisLabel.setInterval(40);
+    graph2MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_QX4O));
+    graph2MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    graph2MajorYAxisLabel.setScale(1);
+    graph2.addLeftElement(graph2MajorYAxisLabel);
+
+    graph2Line1Painter.setColor(touchgfx::Color::getColorFromRGB(22, 196, 22));
+    graph2Line1.setPainter(graph2Line1Painter);
+    graph2Line1.setLineWidth(2);
+    graph2.addGraphElement(graph2Line1);
+
+
+    graph2.addDataPoint(-100, -46);
+    graph2.addDataPoint(-98, -54);
+    graph2.addDataPoint(-96, -50);
+    graph2.addDataPoint(-94, -37);
+    graph2.addDataPoint(-92, -20);
+    graph2.addDataPoint(-90, -5);
+    graph2.addDataPoint(-88, 2);
+    graph2.addDataPoint(-86, 0);
+    graph2.addDataPoint(-84, -12);
+    graph2.addDataPoint(-82, -32);
+    graph2.addDataPoint(-80, -53);
+    graph2.addDataPoint(-78, -72);
+    graph2.addDataPoint(-76, -81);
+    graph2.addDataPoint(-74, -78);
+    graph2.addDataPoint(-72, -62);
+    graph2.addDataPoint(-70, -34);
+    graph2.addDataPoint(-68, 0);
+    graph2.addDataPoint(-66, 34);
+    graph2.addDataPoint(-64, 61);
+    graph2.addDataPoint(-62, 78);
+    graph2.addDataPoint(-60, 81);
+    graph2.addDataPoint(-58, 72);
+    graph2.addDataPoint(-56, 54);
+    graph2.addDataPoint(-54, 32);
+    graph2.addDataPoint(-52, 12);
+    graph2.addDataPoint(-50, 0);
+    graph2.addDataPoint(-48, -3);
+    graph2.addDataPoint(-46, 5);
+    graph2.addDataPoint(-44, 20);
+    graph2.addDataPoint(-42, 36);
+    graph2.addDataPoint(-40, 50);
+    graph2.addDataPoint(-38, 54);
+    graph2.addDataPoint(-36, 47);
+    graph2.addDataPoint(-34, 27);
+    graph2.addDataPoint(-32, -1);
+    graph2.addDataPoint(-30, -34);
+    graph2.addDataPoint(-28, -65);
+    graph2.addDataPoint(-26, -87);
+    graph2.addDataPoint(-24, -98);
+    graph2.addDataPoint(-22, -94);
+    graph2.addDataPoint(-20, -77);
+    graph2.addDataPoint(-18, -51);
+    graph2.addDataPoint(-16, -23);
+    graph2.addDataPoint(-14, 1);
+    graph2.addDataPoint(-12, 18);
+    graph2.addDataPoint(-10, 24);
+    graph2.addDataPoint(-8, 19);
+    graph2.addDataPoint(-6, 6);
+    graph2.addDataPoint(-4, -8);
+    graph2.addDataPoint(-2, -20);
+    graph2.addDataPoint(0, -23);
+    graph2.addDataPoint(2, -16);
+    graph2.addDataPoint(4, 2);
+    graph2.addDataPoint(6, 28);
+    graph2.addDataPoint(8, 56);
+    graph2.addDataPoint(10, 80);
+    graph2.addDataPoint(12, 95);
+    graph2.addDataPoint(14, 97);
+    graph2.addDataPoint(16, 85);
+    graph2.addDataPoint(18, 61);
+    graph2.addDataPoint(20, 29);
+    graph2.addDataPoint(22, -3);
+    graph2.addDataPoint(24, -31);
+    graph2.addDataPoint(26, -49);
+    graph2.addDataPoint(28, -54);
+    graph2.addDataPoint(30, -48);
+    graph2.addDataPoint(32, -34);
+    graph2.addDataPoint(34, -17);
+    graph2.addDataPoint(36, -3);
+    graph2.addDataPoint(38, 3);
+    graph2.addDataPoint(40, -1);
+    graph2.addDataPoint(42, -15);
+    graph2.addDataPoint(44, -35);
+    graph2.addDataPoint(46, -57);
+    graph2.addDataPoint(48, -74);
+    graph2.addDataPoint(50, -82);
+    graph2.addDataPoint(52, -76);
+    graph2.addDataPoint(54, -58);
+    graph2.addDataPoint(56, -29);
+    graph2.addDataPoint(58, 6);
+    graph2.addDataPoint(60, 39);
+    graph2.addDataPoint(62, 65);
+    graph2.addDataPoint(64, 80);
+    graph2.addDataPoint(66, 81);
+    graph2.addDataPoint(68, 70);
+    graph2.addDataPoint(70, 50);
+    graph2.addDataPoint(72, 28);
+    graph2.addDataPoint(74, 10);
+    graph2.addDataPoint(76, -1);
+    graph2.addDataPoint(78, -2);
+    graph2.addDataPoint(80, 7);
+    graph2.addDataPoint(82, 22);
+    graph2.addDataPoint(84, 39);
+    graph2.addDataPoint(86, 51);
+    graph2.addDataPoint(88, 54);
+    graph2.addDataPoint(90, 44);
+    graph2.addDataPoint(92, 23);
+    graph2.addDataPoint(94, -7);
+    graph2.addDataPoint(96, -40);
+    graph2.addDataPoint(98, -69);
+    add(graph2);
+
+    textArea3.setXY(0, 0);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UJ0C));
+    add(textArea3);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -258,4 +393,15 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
     customGraph1.initialize();
+}
+
+void Screen1ViewBase::graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value)
+{
+    if (&src == &graph2)
+    {
+        //Interaction2
+        //When graph2 dragged call virtual function
+        //Call graph2Dragged
+        graph2Dragged(value);
+    }
 }

@@ -65,6 +65,7 @@ Application/User/generated/Screen1ViewBase.o: \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB888.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp \
+ ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
@@ -134,6 +135,7 @@ Application/User/generated/Screen1ViewBase.o: \
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB888.hpp:
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp:
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp:

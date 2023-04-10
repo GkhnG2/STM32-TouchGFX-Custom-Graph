@@ -33,7 +33,7 @@
             "Name": "textArea2",
             "X": 308,
             "Y": 242,
-            "Width": 65,
+            "Width": 64,
             "Height": 20,
             "TextId": "__SingleUse_AXIG",
             "TextRotation": "0",
@@ -65,7 +65,7 @@
             "Name": "textArea2_1",
             "X": 125,
             "Y": 2,
-            "Width": 65,
+            "Width": 64,
             "Height": 20,
             "TextId": "__SingleUse_9869",
             "TextRotation": "0",
@@ -129,7 +129,7 @@
             "Name": "textArea2_1_1_1",
             "X": 154,
             "Y": 171,
-            "Width": 30,
+            "Width": 31,
             "Height": 20,
             "TextId": "__SingleUse_MTUS",
             "TextRotation": "0",
@@ -209,7 +209,7 @@
             "Name": "textArea2_1_1_1_1",
             "X": 154,
             "Y": 133,
-            "Width": 30,
+            "Width": 31,
             "Height": 20,
             "TextId": "__SingleUse_0NS1",
             "TextRotation": "0",
@@ -225,7 +225,7 @@
             "Name": "textArea2_1_1_1_1_1",
             "X": 154,
             "Y": 92,
-            "Width": 30,
+            "Width": 31,
             "Height": 20,
             "TextId": "__SingleUse_Z325",
             "TextRotation": "0",
@@ -241,7 +241,7 @@
             "Name": "textArea2_1_1_1_1_1_1",
             "X": 154,
             "Y": 52,
-            "Width": 30,
+            "Width": 31,
             "Height": 20,
             "TextId": "__SingleUse_OXJT",
             "TextRotation": "0",
@@ -333,9 +333,89 @@
             "Width": 310,
             "Height": 200,
             "CustomContainerDefinitionName": "customGraph"
+          },
+          {
+            "Type": "StaticGraph",
+            "Name": "graph2",
+            "X": 21,
+            "Y": 312,
+            "Width": 266,
+            "Height": 148,
+            "DataSeed": -1626322108,
+            "NumberOfValues": 100,
+            "MaxX": 100.0,
+            "MinX": -100.0,
+            "PrecisionX": "1",
+            "MaxY": 100.0,
+            "MinY": -100.0,
+            "PrecisionY": "1",
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "LabelSizeTop": 12,
+            "LabelSizeBottom": 20,
+            "LabelSizeLeft": 32,
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 22,
+                  "Green": 196,
+                  "Blue": 22
+                }
+              }
+            ],
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 30.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_AR0X",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 40.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_QX4O",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "Width": 74,
+            "Height": 20,
+            "TextId": "__SingleUse_UJ0C",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerGraphDragged",
+              "TriggerComponent": "graph2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "graph2Dragged"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
@@ -356,62 +436,86 @@
             }
           },
           {
-            "Type": "DynamicGraph",
-            "Name": "dynamicGraph1",
+            "Type": "StaticGraph",
+            "Name": "graph1",
             "Width": 310,
             "Height": 200,
-            "DataSeed": -1184978885,
+            "DataSeed": 246953492,
             "NumberOfValues": 100,
+            "MaxX": 100.0,
+            "MinX": -100.0,
+            "PrecisionX": "1",
             "MaxY": 100.0,
-            "Precision": "1",
-            "LastIndex": 99,
+            "MinY": -100.0,
+            "PrecisionY": "1",
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
-            "LabelSizeTop": 11,
-            "LabelSizeBottom": 20,
-            "LabelSizeLeft": 32,
-            "GraphType": "GraphScroll",
+            "LabelSizeTop": 25,
+            "LabelSizeBottom": 37,
+            "LabelSizeLeft": 45,
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
                 "LineWidth": 4,
                 "FileNameImage": "",
                 "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
+                  "Red": 50,
+                  "Green": 194,
+                  "Blue": 55
                 }
               }
             ],
             "XAxisGrid": {
               "Type": "GraphGrid",
-              "Interval": 10.0,
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 20.0,
               "LineWidth": 1
             },
             "YAxisGrid": {
               "Type": "GraphGrid",
-              "Interval": 10.0,
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 20.0,
               "LineWidth": 1
             },
             "XAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 10.0,
+              "Interval": 70.0,
               "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_TP9Y",
+              "TextId": "__SingleUse_64A2",
               "TextRotation": "0",
               "Position": "Bottom"
             },
             "YAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 10.0,
+              "Interval": 40.0,
               "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_758P",
+              "TextId": "__SingleUse_P91H",
               "TextRotation": "0",
               "Position": "Left"
             }
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerGraphDragged",
+              "TriggerComponent": "graph1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "graph1Dragged"
+            }
+          }
+        ]
       }
     ],
     "Name": "MyApplication",

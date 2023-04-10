@@ -12,6 +12,8 @@
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:10:13:customGraph::~customGraph()	8	static
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:10:13:virtual customGraph::~customGraph()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:440:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeX(int, int)	4	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:14:18:virtual void customGraph::graph1Dragged(touchgfx::AbstractDataGraph::GraphDragEvent)	16	static
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:3:1:customGraph::customGraph()	8	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:8:6:virtual void customGraph::initialize()	0	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:14:6:void customGraph::addPoint(float)	16	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:8:6:virtual void customGraph::initialize()	8	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:15:6:void customGraph::addPoint(float, float)	0	static

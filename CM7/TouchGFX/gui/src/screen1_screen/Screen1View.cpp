@@ -3,7 +3,9 @@
 
 Screen1View::Screen1View()
 {
-	tickCounter = 0;
+	tickCounter  = 0;
+	tickCounter2 = 0;
+	Counter = 0;
 }
 
 void Screen1View::setupScreen()
@@ -19,9 +21,19 @@ void Screen1View::tearDownScreen()
 void Screen1View::handleTickEvent()
 {
 	tickCounter++;
-	if(tickCounter % 3 == 0)
+	tickCounter2++;
+	if(tickCounter == 10){
+		tickCounter= 0;
+		//tickCounter2++;
+	}
+
+	//graph1.setGraphRangeX(0, 60+tickCounter2);
+	if(tickCounter2 % 3 == 0)
 	{
-		dynamicGraph1.addDataPoint((int)(sinf(tickCounter * 0.07) + 1) * 40 + rand() % 10);
-		customGraph1.addPoint((sinf(tickCounter * 0.07) + 1) * 40 + rand() % 10);
+		dynamicGraph1.addDataPoint((int)(sinf(tickCounter2 * 0.07) + 1) * 40 + rand() % 10);
+		//customGraph1.addPoint((sinf(tickCounter2 * 0.07) + 1) * 40 + rand() % 10, (float)tickCounter2);
+		//graph1.addDataPoint((int)(sinf(tickCounter2 * 0.07) + 1) * 40 + rand() % 10, tickCounter2);
 	}
 }
+
+//void Screen1View:

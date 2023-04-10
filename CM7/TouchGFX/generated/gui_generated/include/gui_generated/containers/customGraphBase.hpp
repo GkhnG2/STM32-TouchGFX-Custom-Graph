@@ -7,7 +7,7 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/graph/GraphScroll.hpp>
+#include <touchgfx/widgets/graph/Graph.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
@@ -19,6 +19,14 @@ public:
     virtual ~customGraphBase();
     virtual void initialize();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void graph1Dragged(AbstractDataGraph::GraphDragEvent value)
+    {
+        // Override and implement this function in customGraph
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -28,15 +36,25 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::GraphScroll<100> dynamicGraph1;
-    touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
-    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
-    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
-    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
-    touchgfx::GraphElementLine dynamicGraph1Line1;
-    touchgfx::PainterRGB888 dynamicGraph1Line1Painter;
+    touchgfx::Graph<100> graph1;
+    touchgfx::GraphElementGridX graph1MajorXAxisGrid;
+    touchgfx::GraphElementGridY graph1MajorYAxisGrid;
+    touchgfx::GraphLabelsX graph1MajorXAxisLabel;
+    touchgfx::GraphLabelsY graph1MajorYAxisLabel;
+    touchgfx::GraphElementLine graph1Line1;
+    touchgfx::PainterRGB888 graph1Line1Painter;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&> graphDraggedCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value);
 
 };
 
