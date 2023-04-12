@@ -33,7 +33,7 @@
             "Name": "textArea2",
             "X": 308,
             "Y": 242,
-            "Width": 64,
+            "Width": 65,
             "Height": 20,
             "TextId": "__SingleUse_AXIG",
             "TextRotation": "0",
@@ -65,7 +65,7 @@
             "Name": "textArea2_1",
             "X": 125,
             "Y": 2,
-            "Width": 64,
+            "Width": 65,
             "Height": 20,
             "TextId": "__SingleUse_9869",
             "TextRotation": "0",
@@ -129,7 +129,7 @@
             "Name": "textArea2_1_1_1",
             "X": 154,
             "Y": 171,
-            "Width": 31,
+            "Width": 30,
             "Height": 20,
             "TextId": "__SingleUse_MTUS",
             "TextRotation": "0",
@@ -209,7 +209,7 @@
             "Name": "textArea2_1_1_1_1",
             "X": 154,
             "Y": 133,
-            "Width": 31,
+            "Width": 30,
             "Height": 20,
             "TextId": "__SingleUse_0NS1",
             "TextRotation": "0",
@@ -225,7 +225,7 @@
             "Name": "textArea2_1_1_1_1_1",
             "X": 154,
             "Y": 92,
-            "Width": 31,
+            "Width": 30,
             "Height": 20,
             "TextId": "__SingleUse_Z325",
             "TextRotation": "0",
@@ -241,7 +241,7 @@
             "Name": "textArea2_1_1_1_1_1_1",
             "X": 154,
             "Y": 52,
-            "Width": 31,
+            "Width": 30,
             "Height": 20,
             "TextId": "__SingleUse_OXJT",
             "TextRotation": "0",
@@ -441,9 +441,8 @@
             "Width": 310,
             "Height": 200,
             "DataSeed": 246953492,
-            "NumberOfValues": 100,
-            "MaxX": 100.0,
-            "MinX": -100.0,
+            "NumberOfValues": 500,
+            "MaxX": 500.0,
             "PrecisionX": "1",
             "MaxY": 100.0,
             "MinY": -100.0,
@@ -451,8 +450,9 @@
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
             "LabelSizeTop": 25,
-            "LabelSizeBottom": 37,
+            "LabelSizeBottom": 35,
             "LabelSizeLeft": 45,
+            "LabelSizeRight": 5,
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
@@ -472,7 +472,7 @@
                 "Green": 151,
                 "Blue": 197
               },
-              "Interval": 20.0,
+              "Interval": 25.0,
               "LineWidth": 1
             },
             "YAxisGrid": {
@@ -487,7 +487,7 @@
             },
             "XAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 70.0,
+              "Interval": 25.0,
               "DecimalSeparator": "Point",
               "TextId": "__SingleUse_64A2",
               "TextRotation": "0",
@@ -501,6 +501,65 @@
               "TextRotation": "0",
               "Position": "Left"
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "debugText",
+            "X": 210,
+            "Width": 10,
+            "Height": 20,
+            "TextId": "__SingleUse_LR9V",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_IZT7",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "timeLabel4",
+            "X": 299,
+            "Y": 180,
+            "Width": 10,
+            "Height": 20,
+            "TextId": "__SingleUse_1R5O",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "timeLabel3",
+            "X": 235,
+            "Y": 180,
+            "Width": 10,
+            "Height": 20,
+            "TextId": "__SingleUse_LORR",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "timeLabel2",
+            "X": 171,
+            "Y": 180,
+            "Width": 10,
+            "Height": 20,
+            "TextId": "__SingleUse_LTV0",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "timeLabel1",
+            "X": 105,
+            "Y": 180,
+            "Width": 10,
+            "Height": 20,
+            "TextId": "__SingleUse_E2QR",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -513,6 +572,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "graph1Dragged"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerGraphClicked",
+              "TriggerComponent": "graph1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "graph1clicked"
             }
           }
         ]

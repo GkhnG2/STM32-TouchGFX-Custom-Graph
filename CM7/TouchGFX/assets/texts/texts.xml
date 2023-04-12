@@ -6,8 +6,26 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_1R5O" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_LORR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_LTV0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_IZT7" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_E2QR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_LR9V" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_64A2" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
+        <Translation Language="GB">s&lt;&gt;</Translation>
       </Text>
       <Text Id="ResourceId2" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">New Text</Translation>
@@ -78,7 +96,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
+    <Typography Id="Default" Font="verdana.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" WildcardCharacterRanges="1-9" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_00" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />

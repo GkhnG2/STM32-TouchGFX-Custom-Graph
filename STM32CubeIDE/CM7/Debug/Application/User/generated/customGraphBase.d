@@ -58,6 +58,8 @@ Application/User/generated/customGraphBase.o: \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB888.hpp \
+ ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp:
@@ -118,5 +120,7 @@ Application/User/generated/customGraphBase.o: \
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB888.hpp:
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:

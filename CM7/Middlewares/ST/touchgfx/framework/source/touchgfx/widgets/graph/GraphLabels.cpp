@@ -136,10 +136,12 @@ void GraphLabelsBase::formatLabel(Unicode::UnicodeChar* buffer, int16_t bufferSi
     if (decimals == 0)
     {
         Unicode::snprintf(buffer + length, bufferSize - length, "%d", (label + scale / 2) / scale);
+    	//Unicode::snprintf(buffer + length, bufferSize - length, "%d", 9);
     }
     else if (decimals > 0)
     {
         Unicode::snprintf(buffer + length, bufferSize - length, "%d", label / scale);
+    	//Unicode::snprintf(buffer + length, bufferSize - length, "%d", 9);
         length = Unicode::strlen(buffer);
         if (length < bufferSize - 1)
         {

@@ -76,6 +76,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp \
+ ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp \
@@ -203,6 +204,7 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp:
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/images/include/BitmapDatabase.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD24bpp.hpp:

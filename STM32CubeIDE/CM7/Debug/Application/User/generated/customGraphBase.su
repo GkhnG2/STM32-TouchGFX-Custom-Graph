@@ -70,32 +70,53 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:662:17:virtual int touchgfx::GraphElementGridY::getGraphAreaEndPos(const touchgfx::AbstractDataGraph*) const	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:667:25:virtual touchgfx::CWRUtil::Q5 touchgfx::GraphElementGridY::valueToScreenQ5(const touchgfx::AbstractDataGraph*, int) const	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
-../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp:25:18:virtual void customGraphBase::graph1Dragged(touchgfx::AbstractDataGraph::GraphDragEvent)	8	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:157:1:customGraphBase::~customGraphBase()	0	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:162:6:virtual void customGraphBase::initialize()	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:48:18:virtual void touchgfx::TextArea::setWidth(int16_t)	32	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:54:18:virtual void touchgfx::TextArea::setHeight(int16_t)	32	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:60:18:virtual touchgfx::Rect touchgfx::TextArea::getSolidRect() const	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:89:18:virtual void touchgfx::TextArea::setAlpha(uint8_t)	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:127:18:virtual void touchgfx::TextArea::setXBaselineY(int16_t, int16_t)	16	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:403:41:virtual const UnicodeChar* touchgfx::TextArea::getWildcard2() const	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:84:41:virtual const UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	0	static
+../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp:27:18:virtual void customGraphBase::graph1Dragged(touchgfx::AbstractDataGraph::GraphDragEvent)	8	static
+../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/containers/customGraphBase.hpp:31:18:virtual void customGraphBase::graph1clicked(touchgfx::AbstractDataGraph::GraphClickEvent)	8	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:564:1:customGraphBase::~customGraphBase()	0	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:569:6:virtual void customGraphBase::initialize()	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:290:8:touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphClickEvent&>::~Callback()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:290:8:touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&>::~Callback()	0	static
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp:54:7:touchgfx::Graph<100>::~Graph()	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp:54:7:touchgfx::Graph<500>::~Graph()	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:618:7:touchgfx::GraphElementGridY::~GraphElementGridY()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:557:7:touchgfx::GraphElementGridX::~GraphElementGridX()	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:318:18:void touchgfx::Callback<dest_type, T1, T2, void>::execute(T1, T2) [with dest_type = customGraphBase; T1 = const touchgfx::AbstractDataGraph&; T2 = const touchgfx::AbstractDataGraph::GraphClickEvent&]	12	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:328:18:bool touchgfx::Callback<dest_type, T1, T2, void>::isValid() const [with dest_type = customGraphBase; T1 = const touchgfx::AbstractDataGraph&; T2 = const touchgfx::AbstractDataGraph::GraphClickEvent&]	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:318:18:void touchgfx::Callback<dest_type, T1, T2, void>::execute(T1, T2) [with dest_type = customGraphBase; T1 = const touchgfx::AbstractDataGraph&; T2 = const touchgfx::AbstractDataGraph::GraphDragEvent&]	12	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:328:18:bool touchgfx::Callback<dest_type, T1, T2, void>::isValid() const [with dest_type = customGraphBase; T1 = const touchgfx::AbstractDataGraph&; T2 = const touchgfx::AbstractDataGraph::GraphDragEvent&]	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:557:7:virtual touchgfx::GraphElementGridX::~GraphElementGridX()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:618:7:virtual touchgfx::GraphElementGridY::~GraphElementGridY()	8	static
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp:54:7:virtual touchgfx::Graph<100>::~Graph()	8	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/Graph.hpp:54:7:virtual touchgfx::Graph<500>::~Graph()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:290:8:virtual touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&>::~Callback()	8	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:157:1:virtual customGraphBase::~customGraphBase()	8	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:290:8:virtual touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphClickEvent&>::~Callback()	8	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:564:1:virtual customGraphBase::~customGraphBase()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:560:17:virtual int touchgfx::GraphElementGridX::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:621:17:virtual int touchgfx::GraphElementGridY::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1176:18:virtual void touchgfx::AbstractDataGraph::invalidateContent() const	8	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:167:6:void customGraphBase::graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&)	4	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	8	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:574:6:void customGraphBase::graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&)	4	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:585:6:void customGraphBase::graphClickedCallbackHandler(const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphClickEvent&)	4	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1779:17:virtual int touchgfx::StaticDataGraph::indexToDataPointYScaled(int16_t) const	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1763:17:virtual int touchgfx::StaticDataGraph::indexToDataPointXScaled(int16_t) const	8	static
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	16	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:48:5:touchgfx::Drawable::Drawable()	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:828:15:static touchgfx::CWRUtil::Q5 touchgfx::CWRUtil::muldiv_toQ5(int32_t, int32_t, int32_t)	24	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1282:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenYQ5(int) const	16	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1270:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenXQ5(int) const	16	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp:43:5:touchgfx::GraphLabelsBase::GraphLabelsBase()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB888.hpp:36:5:touchgfx::AbstractPainterRGB888::AbstractPainterRGB888()	16	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:9:1:customGraphBase::customGraphBase()	64	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/gui_generated/src/containers/customGraphBase.cpp:9:1:customGraphBase::customGraphBase()	112	static

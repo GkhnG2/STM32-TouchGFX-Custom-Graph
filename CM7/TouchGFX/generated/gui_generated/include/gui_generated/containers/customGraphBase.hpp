@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class customGraphBase : public touchgfx::Container
 {
@@ -26,6 +28,10 @@ public:
     {
         // Override and implement this function in customGraph
     }
+    virtual void graph1clicked(AbstractDataGraph::GraphClickEvent value)
+    {
+        // Override and implement this function in customGraph
+    }
 
 protected:
     FrontendApplication& application() {
@@ -36,13 +42,24 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::Graph<100> graph1;
+    touchgfx::Graph<500> graph1;
     touchgfx::GraphElementGridX graph1MajorXAxisGrid;
     touchgfx::GraphElementGridY graph1MajorYAxisGrid;
     touchgfx::GraphLabelsX graph1MajorXAxisLabel;
     touchgfx::GraphLabelsY graph1MajorYAxisLabel;
     touchgfx::GraphElementLine graph1Line1;
     touchgfx::PainterRGB888 graph1Line1Painter;
+    touchgfx::TextAreaWithOneWildcard debugText;
+    touchgfx::TextArea timeLabel4;
+    touchgfx::TextArea timeLabel3;
+    touchgfx::TextArea timeLabel2;
+    touchgfx::TextArea timeLabel1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t DEBUGTEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar debugTextBuffer[DEBUGTEXT_SIZE];
 
 private:
 
@@ -50,11 +67,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&> graphDraggedCallback;
+    touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphClickEvent&> graphClickedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value);
+    void graphClickedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphClickEvent& value);
 
 };
 
