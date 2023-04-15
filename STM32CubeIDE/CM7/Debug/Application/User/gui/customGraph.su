@@ -9,20 +9,21 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	0	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:83:15:virtual void customGraph::graph1clicked(touchgfx::AbstractDataGraph::GraphClickEvent)	32	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:10:13:customGraph::~customGraph()	8	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:10:13:virtual customGraph::~customGraph()	8	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:11:13:customGraph::~customGraph()	8	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:11:13:virtual customGraph::~customGraph()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:300:13:int touchgfx::CWRUtil::Q5::round() const	0	static
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:828:15:static touchgfx::CWRUtil::Q5 touchgfx::CWRUtil::muldiv_toQ5(int32_t, int32_t, int32_t)	24	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:138:15:virtual void customGraph::graph1clicked(touchgfx::AbstractDataGraph::GraphClickEvent)	40	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:440:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeX(int, int)	4	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:559:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeXMinAsInt() const	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:593:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeXMaxAsInt() const	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:627:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeYMinAsInt() const	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:659:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeYMaxAsInt() const	0	static
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1887:25:virtual touchgfx::CWRUtil::Q5 touchgfx::StaticDataGraph::indexToScreenXQ5(int16_t) const	0	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:18:9:int customGraph::findTimeLabelCoordinate(int)	24	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:53:10:void customGraph::updateTimeLabel(touchgfx::TextAreaWithOneWildcard*, touchgfx::Unicode::UnicodeChar*, tm*)	24	static
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:3:1:customGraph::customGraph()	8	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:8:6:virtual void customGraph::initialize()	32	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:37:18:virtual void customGraph::graph1Dragged(touchgfx::AbstractDataGraph::GraphDragEvent)	40	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:24:6:void customGraph::addPoint(float, float)	0	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:40:6:void customGraph::setMaxPoint(int)	0	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:46:6:void customGraph::setTimeRange(int)	32	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:8:6:virtual void customGraph::initialize()	24	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/containers/customGraph.hpp:63:18:virtual void customGraph::graph1Dragged(touchgfx::AbstractDataGraph::GraphDragEvent)	32	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/gui/src/containers/customGraph.cpp:34:6:void customGraph::addPoint(float, float)	0	static

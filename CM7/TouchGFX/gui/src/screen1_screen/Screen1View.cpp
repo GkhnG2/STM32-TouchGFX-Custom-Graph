@@ -30,7 +30,6 @@ void Screen1View::handleTickEvent()
 	//graph1.setGraphRangeX(0, 60+tickCounter2);
 	if(tickCounter2 % 3 == 0)
 	{
-		dynamicGraph1.addDataPoint((int)(sinf(tickCounter2 * 0.07) + 1) * 40 + rand() % 10);
 		//customGraph1.addPoint((sinf(tickCounter2 * 0.07) + 1) * 40 + rand() % 10, (float)tickCounter2);
 		//graph1.addDataPoint((int)(sinf(tickCounter2 * 0.07) + 1) * 40 + rand() % 10, tickCounter2);
 	}

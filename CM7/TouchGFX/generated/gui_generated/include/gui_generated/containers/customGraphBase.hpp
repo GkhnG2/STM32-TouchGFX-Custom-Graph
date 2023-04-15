@@ -12,7 +12,6 @@
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 
 class customGraphBase : public touchgfx::Container
 {
@@ -42,7 +41,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::Graph<500> graph1;
+    touchgfx::Graph<10> graph1;
     touchgfx::GraphElementGridX graph1MajorXAxisGrid;
     touchgfx::GraphElementGridY graph1MajorYAxisGrid;
     touchgfx::GraphLabelsX graph1MajorXAxisLabel;
@@ -50,16 +49,24 @@ protected:
     touchgfx::GraphElementLine graph1Line1;
     touchgfx::PainterRGB888 graph1Line1Painter;
     touchgfx::TextAreaWithOneWildcard debugText;
-    touchgfx::TextArea timeLabel4;
-    touchgfx::TextArea timeLabel3;
-    touchgfx::TextArea timeLabel2;
-    touchgfx::TextArea timeLabel1;
+    touchgfx::TextAreaWithOneWildcard timeLabel3;
+    touchgfx::TextAreaWithOneWildcard timeLabel2;
+    touchgfx::TextAreaWithOneWildcard timeLabel1;
+    touchgfx::TextAreaWithOneWildcard dateLabel;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t DEBUGTEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar debugTextBuffer[DEBUGTEXT_SIZE];
+    static const uint16_t TIMELABEL3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar timeLabel3Buffer[TIMELABEL3_SIZE];
+    static const uint16_t TIMELABEL2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar timeLabel2Buffer[TIMELABEL2_SIZE];
+    static const uint16_t TIMELABEL1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar timeLabel1Buffer[TIMELABEL1_SIZE];
+    static const uint16_t DATELABEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar dateLabelBuffer[DATELABEL_SIZE];
 
 private:
 

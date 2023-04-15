@@ -12,18 +12,6 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-	virtual void graph2Dragged(AbstractDataGraph::GraphDragEvent value)
-	{
-		// Override and implement this function in Screen1
-		if(value.dragEvent.getNewX() > value.dragEvent.getOldX()){
-			Counter2 -= 1;
-			graph2.setGraphRangeX(0 + Counter2, 100 + Counter2);
-		}
-		else if(value.dragEvent.getNewX() < value.dragEvent.getOldX()){
-			Counter2 += 1;
-			graph2.setGraphRangeX(0 + Counter2, 100 + Counter2);
-		}
-	}
 
     void handleTickEvent();
 

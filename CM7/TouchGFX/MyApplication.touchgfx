@@ -13,409 +13,16 @@
             "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_800x480_shattered_rain_dark.png"
           },
           {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 443,
-            "Y": 3,
-            "Width": 58,
-            "Height": 20,
-            "TextId": "__SingleUse_HRIB",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 308,
-            "Y": 242,
-            "Width": 65,
-            "Height": 20,
-            "TextId": "__SingleUse_AXIG",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 252,
-              "Green": 252,
-              "Blue": 252
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_2",
-            "X": 509,
-            "Y": 82,
-            "Width": 100,
-            "Height": 20,
-            "TextId": "__SingleUse_T87L",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 252,
-              "Green": 252,
-              "Blue": 252
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1",
-            "X": 125,
-            "Y": 2,
-            "Width": 65,
-            "Height": 20,
-            "TextId": "__SingleUse_9869",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_3",
-            "X": 2,
-            "Y": 109,
-            "Width": 94,
-            "Height": 40,
-            "TextId": "__SingleUse_5N1M",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_2",
-            "X": 102,
-            "Y": 101,
-            "Width": 36,
-            "Height": 49,
-            "TextId": "__SingleUse_8RMH",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1",
-            "X": 179,
-            "Y": 222,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_UM8B",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1",
-            "X": 154,
-            "Y": 171,
-            "Width": 30,
-            "Height": 20,
-            "TextId": "__SingleUse_MTUS",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_2",
-            "X": 263,
-            "Y": 222,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_LSWL",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_2_1",
-            "X": 340,
-            "Y": 222,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_Q0BQ",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_2_1_1",
-            "X": 417,
-            "Y": 222,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_N3JM",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_2_1_1_1",
-            "X": 492,
-            "Y": 222,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_F0NS",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_1",
-            "X": 154,
-            "Y": 133,
-            "Width": 30,
-            "Height": 20,
-            "TextId": "__SingleUse_0NS1",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_1_1",
-            "X": 154,
-            "Y": 92,
-            "Width": 30,
-            "Height": 20,
-            "TextId": "__SingleUse_Z325",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_1_1_1_1_1_1",
-            "X": 154,
-            "Y": 52,
-            "Width": 30,
-            "Height": 20,
-            "TextId": "__SingleUse_OXJT",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder1",
-            "X": 533,
-            "Y": 103,
-            "Width": 48,
-            "Height": 30,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderSize": 2
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_2_1",
-            "X": 552,
-            "Y": 108,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_UAP4",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "DynamicGraph",
-            "Name": "dynamicGraph1",
-            "X": 190,
-            "Y": 22,
-            "Width": 310,
-            "Height": 200,
-            "DataSeed": 1725376592,
-            "NumberOfValues": 100,
-            "MaxY": 100.0,
-            "Precision": "1",
-            "LastIndex": 99,
-            "XAxisScale": 1.0,
-            "InsertRandomValues": true,
-            "GraphType": "GraphScroll",
-            "GraphDrawers": [
-              {
-                "Type": "LineDrawer",
-                "LineWidth": 4,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 196,
-                  "Green": 185,
-                  "Blue": 22
-                }
-              }
-            ],
-            "XAxisGrid": {
-              "Type": "GraphGrid",
-              "Color": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "Interval": 10.0,
-              "LineWidth": 1
-            },
-            "YAxisGrid": {
-              "Type": "GraphGrid",
-              "Color": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "Interval": 10.0,
-              "LineWidth": 1
-            }
-          },
-          {
             "Type": "CustomContainerInstance",
             "Name": "customGraph1",
-            "X": 480,
-            "Y": 254,
+            "X": 245,
+            "Y": 140,
             "Width": 310,
             "Height": 200,
             "CustomContainerDefinitionName": "customGraph"
-          },
-          {
-            "Type": "StaticGraph",
-            "Name": "graph2",
-            "X": 21,
-            "Y": 312,
-            "Width": 266,
-            "Height": 148,
-            "DataSeed": -1626322108,
-            "NumberOfValues": 100,
-            "MaxX": 100.0,
-            "MinX": -100.0,
-            "PrecisionX": "1",
-            "MaxY": 100.0,
-            "MinY": -100.0,
-            "PrecisionY": "1",
-            "XAxisScale": 1.0,
-            "InsertRandomValues": true,
-            "LabelSizeTop": 12,
-            "LabelSizeBottom": 20,
-            "LabelSizeLeft": 32,
-            "GraphDrawers": [
-              {
-                "Type": "LineDrawer",
-                "LineWidth": 2,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 22,
-                  "Green": 196,
-                  "Blue": 22
-                }
-              }
-            ],
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 30.0,
-              "DecimalSeparator": "Point",
-              "TextColor": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "TextId": "__SingleUse_AR0X",
-              "TextRotation": "0",
-              "Position": "Bottom"
-            },
-            "YAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 40.0,
-              "DecimalSeparator": "Point",
-              "TextColor": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "TextId": "__SingleUse_QX4O",
-              "TextRotation": "0",
-              "Position": "Left"
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea3",
-            "Width": 74,
-            "Height": 20,
-            "TextId": "__SingleUse_UJ0C",
-            "TextRotation": "0",
-            "AutoSize": true
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "Interaction2",
-            "Trigger": {
-              "Type": "TriggerGraphDragged",
-              "TriggerComponent": "graph2"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "graph2Dragged"
-            }
-          }
-        ]
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -441,7 +48,7 @@
             "Width": 310,
             "Height": 200,
             "DataSeed": 246953492,
-            "NumberOfValues": 500,
+            "NumberOfValues": 10,
             "MaxX": 500.0,
             "PrecisionX": "1",
             "MaxY": 100.0,
@@ -450,7 +57,7 @@
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
             "LabelSizeTop": 25,
-            "LabelSizeBottom": 35,
+            "LabelSizeBottom": 40,
             "LabelSizeLeft": 45,
             "LabelSizeRight": 5,
             "GraphDrawers": [
@@ -505,7 +112,7 @@
           {
             "Type": "TextArea",
             "Name": "debugText",
-            "X": 210,
+            "X": 94,
             "Width": 10,
             "Height": 20,
             "TextId": "__SingleUse_LR9V",
@@ -519,47 +126,59 @@
           },
           {
             "Type": "TextArea",
-            "Name": "timeLabel4",
-            "X": 299,
-            "Y": 180,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_1R5O",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "timeLabel3",
             "X": 235,
             "Y": 180,
-            "Width": 10,
             "Height": 20,
-            "TextId": "__SingleUse_LORR",
+            "TextId": "timeL3",
             "TextRotation": "0",
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           },
           {
             "Type": "TextArea",
             "Name": "timeLabel2",
             "X": 171,
             "Y": 180,
-            "Width": 10,
             "Height": 20,
-            "TextId": "__SingleUse_LTV0",
+            "TextId": "timeL2",
             "TextRotation": "0",
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           },
           {
             "Type": "TextArea",
             "Name": "timeLabel1",
             "X": 105,
             "Y": 180,
-            "Width": 10,
             "Height": 20,
-            "TextId": "__SingleUse_E2QR",
+            "TextId": "timeL1",
             "TextRotation": "0",
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dateLabel",
+            "X": 215,
+            "Height": 20,
+            "TextId": "date",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_WAHU",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [

@@ -9,14 +9,7 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
-#include <touchgfx/widgets/graph/GraphScroll.hpp>
-#include <touchgfx/widgets/graph/GraphElements.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 #include <gui/containers/customGraph.hpp>
-#include <touchgfx/widgets/graph/Graph.hpp>
-#include <touchgfx/widgets/graph/GraphLabels.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -24,14 +17,6 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase();
     virtual void setupScreen();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void graph2Dragged(AbstractDataGraph::GraphDragEvent value)
-    {
-        // Override and implement this function in Screen1
-    }
 
 protected:
     FrontendApplication& application() {
@@ -43,35 +28,7 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea2_2;
-    touchgfx::TextArea textArea2_1;
-    touchgfx::TextArea textArea2_1_3;
-    touchgfx::TextArea textArea2_1_2;
-    touchgfx::TextArea textArea2_1_1;
-    touchgfx::TextArea textArea2_1_1_1;
-    touchgfx::TextArea textArea2_1_1_1_2;
-    touchgfx::TextArea textArea2_1_1_1_2_1;
-    touchgfx::TextArea textArea2_1_1_1_2_1_1;
-    touchgfx::TextArea textArea2_1_1_1_2_1_1_1;
-    touchgfx::TextArea textArea2_1_1_1_1;
-    touchgfx::TextArea textArea2_1_1_1_1_1;
-    touchgfx::TextArea textArea2_1_1_1_1_1_1;
-    touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::TextArea textArea2_2_1;
-    touchgfx::GraphScroll<100> dynamicGraph1;
-    touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
-    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
-    touchgfx::GraphElementLine dynamicGraph1Line1;
-    touchgfx::PainterRGB888 dynamicGraph1Line1Painter;
     customGraph customGraph1;
-    touchgfx::Graph<100> graph2;
-    touchgfx::GraphLabelsX graph2MajorXAxisLabel;
-    touchgfx::GraphLabelsY graph2MajorYAxisLabel;
-    touchgfx::GraphElementLine graph2Line1;
-    touchgfx::PainterRGB888 graph2Line1Painter;
-    touchgfx::TextArea textArea3;
 
 private:
 
@@ -80,16 +37,6 @@ private:
      */
     static const uint32_t CANVAS_BUFFER_SIZE = 12000;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&> graphDraggedCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value);
 
 };
 
