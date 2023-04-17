@@ -41,7 +41,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::Graph<10> graph1;
+    touchgfx::Graph<500> graph1;
     touchgfx::GraphElementGridX graph1MajorXAxisGrid;
     touchgfx::GraphElementGridY graph1MajorYAxisGrid;
     touchgfx::GraphLabelsX graph1MajorXAxisLabel;
@@ -49,6 +49,7 @@ protected:
     touchgfx::GraphElementLine graph1Line1;
     touchgfx::PainterRGB888 graph1Line1Painter;
     touchgfx::TextAreaWithOneWildcard debugText;
+    touchgfx::TextAreaWithOneWildcard timeLabel4;
     touchgfx::TextAreaWithOneWildcard timeLabel3;
     touchgfx::TextAreaWithOneWildcard timeLabel2;
     touchgfx::TextAreaWithOneWildcard timeLabel1;
@@ -59,6 +60,8 @@ protected:
      */
     static const uint16_t DEBUGTEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar debugTextBuffer[DEBUGTEXT_SIZE];
+    static const uint16_t TIMELABEL4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar timeLabel4Buffer[TIMELABEL4_SIZE];
     static const uint16_t TIMELABEL3_SIZE = 10;
     touchgfx::Unicode::UnicodeChar timeLabel3Buffer[TIMELABEL3_SIZE];
     static const uint16_t TIMELABEL2_SIZE = 10;

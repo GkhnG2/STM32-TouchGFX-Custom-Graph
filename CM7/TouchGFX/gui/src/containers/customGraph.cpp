@@ -8,32 +8,40 @@ customGraph::customGraph()
 void customGraph::initialize()
 {
     customGraphBase::initialize();
-    setTimeRange(24);
 
     firstDataTime = 1681492804;			// 1681492804 --> 14 April 2023 17:20			//firstDataTime = time(NULL);
-    convertTimeStampToDate_time(&firstDataTime, &firstDataTime_tm);
+    convert_timeStampToDateTime(&firstDataTime, &firstDataTime_tm);
 
-    timeLabel1_time = firstDataTime + 300 + 1200;
-    convertTimeStampToDate_time(&timeLabel1_time, &timeLabel1_time_tm);
+    addPoint(firstDataTime, float(1.0));
+	addPoint(firstDataTime + 1200, float(1.3));
+	addPoint(firstDataTime + 1200, float(1.8));
+	addPoint(firstDataTime + 2400, float(2.0));
 
-    timeLabel2_time = timeLabel1_time + 1200;
-    convertTimeStampToDate_time(&timeLabel2_time, &timeLabel2_time_tm);
-
-    timeLabel3_time = timeLabel2_time + 1200;
-    convertTimeStampToDate_time(&timeLabel3_time, &timeLabel3_time_tm);
-
-
-	updateTimeLabel(&dateLabel, dateLabelBuffer, &firstDataTime_tm);
-
-	updateTimeLabel(&timeLabel1, timeLabel1Buffer, &timeLabel1_time_tm);
-	updateTimeLabel(&timeLabel2, timeLabel2Buffer, &timeLabel2_time_tm);
-	updateTimeLabel(&timeLabel3, timeLabel3Buffer, &timeLabel3_time_tm);
+	setTimeRange(24);
 }
 
 
-void customGraph::addPoint(float y, float x)
+void customGraph::addPoint(time_t x, float y)
 {
-	customGraphBase::graph1.addDataPoint(y, x);
+	struct tm x_tm;
+	float x_axisVal;
+
+	if(firstDataTaken == 0)
+	{
+		firstDataTaken = 1;
+		firstDataTime = x;
+		convert_timeStampToDateTime(&firstDataTime, &firstDataTime_tm);
+		customGraphBase::graph1.addDataPoint(float(0.0), y);
+	}
+	else
+	{
+		convert_timeStampToDateTime(&x, &x_tm);
+		if(x_tm.tm_year == firstDataTime_tm.tm_year && x_tm.tm_mon == firstDataTime_tm.tm_mon && (x_tm.tm_mday - firstDataTime_tm.tm_mday) < 2)
+		{
+			x_axisVal = ((x_tm.tm_mday - firstDataTime_tm.tm_mday)*24*60) + ((x_tm.tm_hour - firstDataTime_tm.tm_hour)*60) + (x_tm.tm_min - firstDataTime_tm.tm_min);
+			customGraphBase::graph1.addDataPoint(float(x_axisVal), y);
+		}
+	}
 }
 
 
@@ -45,59 +53,49 @@ void customGraph::setMaxPoint(int maxPoint)
 
 void customGraph::setTimeRange(int hours)
 {
-	int success = 0;
 
-	switch(hours){
-		case 1:
-			customGraphTimeRange = 1;
-			customGraphInterval = (customGraphMaxPoint/(24/customGraphTimeRange))/3;
-			customGraphBase::graph1.setGraphRangeX(0, customGraphMaxPoint/(24/customGraphTimeRange));
-			customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
-			customGraphBase::graph1MajorXAxisGrid.setInterval(customGraphInterval);
-			customGraphBase::graph1.setGraphRangeYAutoScaled(true,30);
-			customGraphBase::graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
-			customGraphBase::graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
+	if(hours == 1 || hours ==8 || hours == 24)
+	{
+		customGraphTimeRange = hours;
+		customGraphInterval = (hours*60)/4;
+		customGraphBase::graph1.setGraphRangeX(0, hours*60);
+		customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
+		customGraphBase::graph1MajorXAxisGrid.setInterval(customGraphInterval);
+		customGraphBase::graph1.setGraphRangeYAutoScaled(true,1);
+		customGraphBase::graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/4);
+		customGraphBase::graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/4);
 
-			customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			break;
-		case 8:
-			customGraphTimeRange = 8;
-			customGraphInterval = (customGraphMaxPoint/(24/customGraphTimeRange))/3;
-			customGraphBase::graph1.setGraphRangeX(0, customGraphMaxPoint/(24/customGraphTimeRange));
-			customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
-			customGraphBase::graph1MajorXAxisGrid.setInterval(customGraphInterval);
-			customGraphBase::graph1.setGraphRangeYAutoScaled(true,30);
-			customGraphBase::graph1MajorYAxisLabel.setInterval(customGraphInterval);
-			customGraphBase::graph1MajorYAxisGrid.setInterval(customGraphInterval);
+		customGraphBase::graph1MajorYAxisLabel.setInterval(1);
+		customGraphBase::graph1MajorYAxisGrid.setInterval(1);
 
-			customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			break;
-		case 24:
-			customGraphTimeRange = 24;
-			customGraphInterval = (customGraphMaxPoint/(24/customGraphTimeRange))/3;
-			customGraphBase::graph1.setGraphRangeX(0, customGraphMaxPoint/(24/customGraphTimeRange));
-			customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
-			customGraphBase::graph1MajorXAxisGrid.setInterval(customGraphInterval);
-			customGraphBase::graph1.setGraphRangeYAutoScaled(true,30);
-			customGraphBase::graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
-			customGraphBase::graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
+		timeLabel1_time = firstDataTime + customGraphInterval*60;
+		convert_timeStampToDateTime(&timeLabel1_time, &timeLabel1_time_tm);
 
-			customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/3) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-			break;
-		default:
-			break;
+		timeLabel2_time = timeLabel1_time + customGraphInterval*60;
+		convert_timeStampToDateTime(&timeLabel2_time, &timeLabel2_time_tm);
 
-		if(success)
-		{
-			success = 0;
+		timeLabel3_time = timeLabel2_time + customGraphInterval*60;
+		convert_timeStampToDateTime(&timeLabel3_time, &timeLabel3_time_tm);
 
+		timeLabel4_time = timeLabel3_time + customGraphInterval*60;
+		convert_timeStampToDateTime(&timeLabel4_time, &timeLabel4_time_tm);
 
-		}
+		Unicode::snprintf(dateLabelBuffer, 10, "%02d-%02d-%02d",firstDataTime_tm.tm_mday, firstDataTime_tm.tm_mon, firstDataTime_tm.tm_year-100);
+		dateLabel.setWildcard(dateLabelBuffer);
+		dateLabel.invalidate();
+		dateLabel.resizeToCurrentText();
+		dateLabel.invalidate();
+
+		updateTimeLabel(&timeLabel1, timeLabel1Buffer, &timeLabel1_time_tm);
+		updateTimeLabel(&timeLabel2, timeLabel2Buffer, &timeLabel2_time_tm);
+		updateTimeLabel(&timeLabel3, timeLabel3Buffer, &timeLabel3_time_tm);
+		updateTimeLabel(&timeLabel4, timeLabel4Buffer, &timeLabel4_time_tm);
+
+		customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel4.setX(graph1.getX() + (graph1.getGraphAreaWidth()*4/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+
+		scrollCounter = 0;
 	}
 }

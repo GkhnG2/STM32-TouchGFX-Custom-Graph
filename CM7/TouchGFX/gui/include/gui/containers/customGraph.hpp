@@ -12,7 +12,7 @@ public:
 
     virtual void initialize();
 
-    void addPoint(float y, float x);
+    void addPoint(time_t x, float y);
 
     void setMaxPoint(int maxPoint);
 
@@ -45,9 +45,9 @@ protected:
 		return targetXIndex;
 	}
 
-    void convertTimeStampToDate_time(time_t * timestamp, struct tm * date_time)
+    void convert_timeStampToDateTime(time_t * timestamp, struct tm * date_time)
     {
-    	//localtime_r(timestamp, date_time);
+    	localtime_r(timestamp, date_time);
     }
 
     void updateTimeLabel(touchgfx::TextAreaWithOneWildcard * timelabel, touchgfx::Unicode::UnicodeChar * timeLabelBuf, struct tm * time)
@@ -64,74 +64,86 @@ protected:
 	{
 		// Override and implement this function in customGraph
 		if(value.dragEvent.getNewX() > value.dragEvent.getOldX() && scrollCounter>0){
-			scrollCounter -= 1;
+			scrollCounter -= (customGraphTimeRange/2);
 			graph1.setGraphRangeX(0 + scrollCounter, (graph1.getGraphRangeXMaxAsInt() - graph1.getGraphRangeXMinAsInt()) + scrollCounter);
-			graph1.setGraphRangeYAutoScaled(true,30);
+			graph1.setGraphRangeYAutoScaled(true,1);
 			graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
 			graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
 
 			if(timeLabel1.getX() + 16 >= graph1.getX() + graph1.getGraphAreaMarginLeft() + graph1.getGraphAreaWidth() - graph1.getGraphAreaMarginRight()){
 				if(timeLabel1_pageCNTR > 0){
 					timeLabel1_pageCNTR--;
-					timeLabel1_time = timeLabel1_time - 4800;
-					convertTimeStampToDate_time(&timeLabel1_time, &timeLabel1_time_tm);
+					timeLabel1_time = timeLabel1_time - customGraphInterval*4*60;
+					convert_timeStampToDateTime(&timeLabel1_time, &timeLabel1_time_tm);
 					updateTimeLabel(&timeLabel1, timeLabel1Buffer, &timeLabel1_time_tm);
 				}
 			}
 			if(timeLabel2.getX() + 16 >= graph1.getX() + graph1.getGraphAreaMarginLeft() + graph1.getGraphAreaWidth() - graph1.getGraphAreaMarginRight()){
 				if(timeLabel2_pageCNTR > 0){
 					timeLabel2_pageCNTR--;
-					timeLabel2_time = timeLabel2_time - 4800;
-					convertTimeStampToDate_time(&timeLabel2_time, &timeLabel2_time_tm);
+					timeLabel2_time = timeLabel2_time - customGraphInterval*4*60;
+					convert_timeStampToDateTime(&timeLabel2_time, &timeLabel2_time_tm);
 					updateTimeLabel(&timeLabel2, timeLabel2Buffer, &timeLabel2_time_tm);
 				}
 			}
 			if(timeLabel3.getX() + 16 >= graph1.getX() + graph1.getGraphAreaMarginLeft() + graph1.getGraphAreaWidth() - graph1.getGraphAreaMarginRight()){
 				if(timeLabel3_pageCNTR > 0){
 					timeLabel3_pageCNTR--;
-					timeLabel3_time = timeLabel3_time - 4800;
-					convertTimeStampToDate_time(&timeLabel3_time, &timeLabel3_time_tm);
+					timeLabel3_time = timeLabel3_time - customGraphInterval*4*60;
+					convert_timeStampToDateTime(&timeLabel3_time, &timeLabel3_time_tm);
 					updateTimeLabel(&timeLabel3, timeLabel3Buffer, &timeLabel3_time_tm);
+				}
+			}
+			if(timeLabel4.getX() + 16 >= graph1.getX() + graph1.getGraphAreaMarginLeft() + graph1.getGraphAreaWidth() - graph1.getGraphAreaMarginRight()){
+				if(timeLabel4_pageCNTR > 0){
+					timeLabel4_pageCNTR--;
+					timeLabel4_time = timeLabel4_time - customGraphInterval*4*60;
+					convert_timeStampToDateTime(&timeLabel4_time, &timeLabel4_time_tm);
+					updateTimeLabel(&timeLabel3, timeLabel4Buffer, &timeLabel4_time_tm);
 				}
 			}
 		}
 		else if(value.dragEvent.getNewX() < value.dragEvent.getOldX()/* && (graph1.getGraphRangeXMaxAsInt() - graph1.getGraphRangeXMinAsInt())+scrollCounter<graph1.getUsedCapacity()*/){
-			scrollCounter += 1;
+			scrollCounter += (customGraphTimeRange/2);
 			graph1.setGraphRangeX(0 + scrollCounter, (graph1.getGraphRangeXMaxAsInt() - graph1.getGraphRangeXMinAsInt()) + scrollCounter);
-			graph1.setGraphRangeYAutoScaled(true,30);
+			graph1.setGraphRangeYAutoScaled(true,1);
 			graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
 			graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/3);
 
 			if(timeLabel1.getX() + 16 <= graph1.getX() + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight()){
 				timeLabel1_pageCNTR++;
-				timeLabel1_time = timeLabel1_time + 4800;
-				convertTimeStampToDate_time(&timeLabel1_time, &timeLabel1_time_tm);
+				timeLabel1_time = timeLabel1_time + customGraphInterval*4*60;
+				convert_timeStampToDateTime(&timeLabel1_time, &timeLabel1_time_tm);
 				updateTimeLabel(&timeLabel1, timeLabel1Buffer, &timeLabel1_time_tm);
 			}
 			if(timeLabel2.getX() + 16 <= graph1.getX() + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight()){
 				timeLabel2_pageCNTR++;
-				timeLabel2_time = timeLabel2_time + 4800;
-				convertTimeStampToDate_time(&timeLabel2_time, &timeLabel2_time_tm);
+				timeLabel2_time = timeLabel2_time + customGraphInterval*4*60;
+				convert_timeStampToDateTime(&timeLabel2_time, &timeLabel2_time_tm);
 				updateTimeLabel(&timeLabel2, timeLabel2Buffer, &timeLabel2_time_tm);
 			}
 			if(timeLabel3.getX() + 16 <= graph1.getX() + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight()){
 				timeLabel3_pageCNTR++;
-				timeLabel3_time = timeLabel3_time + 4800;
-				convertTimeStampToDate_time(&timeLabel3_time, &timeLabel3_time_tm);
+				timeLabel3_time = timeLabel3_time + customGraphInterval*4*60;
+				convert_timeStampToDateTime(&timeLabel3_time, &timeLabel3_time_tm);
 				updateTimeLabel(&timeLabel3, timeLabel3Buffer, &timeLabel3_time_tm);
 			}
+			if(timeLabel4.getX() + 16 <= graph1.getX() + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight()){
+				timeLabel4_pageCNTR++;
+				timeLabel4_time = timeLabel4_time + customGraphInterval*4*60;
+				convert_timeStampToDateTime(&timeLabel4_time, &timeLabel4_time_tm);
+				updateTimeLabel(&timeLabel4, timeLabel4Buffer, &timeLabel4_time_tm);
+			}
 		}
-		timeLabel1_Pos = CWRUtil::muldiv_toQ5(((timeLabel1_pageCNTR*customGraphInterval*3)+1*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
-		timeLabel2_Pos = CWRUtil::muldiv_toQ5(((timeLabel2_pageCNTR*customGraphInterval*3)+2*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
-		timeLabel3_Pos = CWRUtil::muldiv_toQ5(((timeLabel3_pageCNTR*customGraphInterval*3)+3*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
-		/*timeLabel1.setX(graph1.getX() + graph1.indexToScreenX(findTimeLabelCoordinate((timeLabel1_pageCNTR*customGraphInterval*3)+customGraphInterval))  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 16);
-		timeLabel2.setX(graph1.getX() + graph1.indexToScreenX(findTimeLabelCoordinate((timeLabel2_pageCNTR*customGraphInterval*3)+customGraphInterval*2))  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 16);
-		timeLabel3.setX(graph1.getX() + graph1.indexToScreenX(findTimeLabelCoordinate((timeLabel3_pageCNTR*customGraphInterval*3)+customGraphInterval*3))  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 16);
-		*/
+		timeLabel1_Pos = CWRUtil::muldiv_toQ5(((timeLabel1_pageCNTR*customGraphInterval*4)+1*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
+		timeLabel2_Pos = CWRUtil::muldiv_toQ5(((timeLabel2_pageCNTR*customGraphInterval*4)+2*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
+		timeLabel3_Pos = CWRUtil::muldiv_toQ5(((timeLabel3_pageCNTR*customGraphInterval*4)+3*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
+		timeLabel4_Pos = CWRUtil::muldiv_toQ5(((timeLabel4_pageCNTR*customGraphInterval*4)+4*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
 
 		timeLabel1.setX(graph1.getX() + timeLabel1_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
 		timeLabel2.setX(graph1.getX() + timeLabel2_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
 		timeLabel3.setX(graph1.getX() + timeLabel3_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		timeLabel4.setX(graph1.getX() + timeLabel4_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
 
 	}
 
@@ -161,14 +173,17 @@ protected:
 	CWRUtil::Q5 timeLabel1_Pos;
 	CWRUtil::Q5 timeLabel2_Pos;
 	CWRUtil::Q5 timeLabel3_Pos;
+	CWRUtil::Q5 timeLabel4_Pos;
 
 	int scrollCounter = 0;
 	int timeLabel1_pageCNTR=0;
 	int timeLabel2_pageCNTR=0;
 	int timeLabel3_pageCNTR=0;
+	int timeLabel4_pageCNTR=0;
 
 	time_t firstDataTime;
 	struct tm firstDataTime_tm;
+	uint8_t firstDataTaken=0;
 
 	time_t timeLabel1_time;
 	struct tm timeLabel1_time_tm;
@@ -176,6 +191,8 @@ protected:
 	struct tm timeLabel2_time_tm;
 	time_t timeLabel3_time;
 	struct tm timeLabel3_time_tm;
+	time_t timeLabel4_time;
+	struct tm timeLabel4_time_tm;
 
 	short int customGraphMaxPoint  = 500;
 	int customGraphTimeRange = 24;

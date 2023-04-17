@@ -48,14 +48,13 @@
             "Width": 310,
             "Height": 200,
             "DataSeed": 246953492,
-            "NumberOfValues": 10,
-            "MaxX": 500.0,
+            "NumberOfValues": 500,
+            "MaxX": 60.0,
             "PrecisionX": "1",
             "MaxY": 100.0,
             "MinY": -100.0,
-            "PrecisionY": "1",
+            "PrecisionY": "0.1",
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 25,
             "LabelSizeBottom": 40,
             "LabelSizeLeft": 45,
@@ -79,7 +78,7 @@
                 "Green": 151,
                 "Blue": 197
               },
-              "Interval": 25.0,
+              "Interval": 15.0,
               "LineWidth": 1
             },
             "YAxisGrid": {
@@ -94,7 +93,7 @@
             },
             "XAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 25.0,
+              "Interval": 15.0,
               "DecimalSeparator": "Point",
               "TextId": "__SingleUse_64A2",
               "TextRotation": "0",
@@ -126,8 +125,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "timeLabel4",
+            "X": 278,
+            "Y": 180,
+            "Height": 20,
+            "TextId": "timeL4",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
             "Name": "timeLabel3",
-            "X": 235,
+            "X": 215,
             "Y": 180,
             "Height": 20,
             "TextId": "timeL3",
@@ -141,7 +154,7 @@
           {
             "Type": "TextArea",
             "Name": "timeLabel2",
-            "X": 171,
+            "X": 151,
             "Y": 180,
             "Height": 20,
             "TextId": "timeL2",
@@ -155,7 +168,7 @@
           {
             "Type": "TextArea",
             "Name": "timeLabel1",
-            "X": 105,
+            "X": 84,
             "Y": 180,
             "Height": 20,
             "TextId": "timeL1",

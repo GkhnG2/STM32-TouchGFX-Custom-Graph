@@ -6,13 +6,19 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="ti" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;d</Translation>
+      </Text>
+      <Text Id="timeL3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_WAHU" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
       <Text Id="date" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="timeL3" Alignment="Center" TypographyId="Default">
+      <Text Id="timeL4" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="timeL2" Alignment="Center" TypographyId="Default">

@@ -12,9 +12,11 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T_TI,
+    T_TIMEL3,
     T___SINGLEUSE_WAHU,
     T_DATE,
-    T_TIMEL3,
+    T_TIMEL4,
     T_TIMEL2,
     T___SINGLEUSE_IZT7,
     T_TIMEL1,
