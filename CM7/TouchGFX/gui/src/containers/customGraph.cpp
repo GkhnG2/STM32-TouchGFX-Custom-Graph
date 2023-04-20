@@ -16,8 +16,14 @@ void customGraph::initialize()
 	addPoint(firstDataTime + 1200, float(1.3));
 	addPoint(firstDataTime + 1200, float(1.8));
 	addPoint(firstDataTime + 2400, float(2.0));
+	addPoint(firstDataTime + 54000, float(333.5));
+	addPoint(firstDataTime + 55000, float(353.5));
+	addPoint(firstDataTime + 56000, float(343.5));
+	addPoint(firstDataTime + 57000, float(348.5));
+	addPoint(firstDataTime + 58000, float(379.5));
+	addPoint(firstDataTime + 72000, float(433.5));
 
-	setTimeRange(24);
+	setTimeRange(1);
 }
 
 
@@ -57,16 +63,13 @@ void customGraph::setTimeRange(int hours)
 	if(hours == 1 || hours ==8 || hours == 24)
 	{
 		customGraphTimeRange = hours;
-		customGraphInterval = (hours*60)/4;
+		customGraphInterval = (hours*60)/numberofGrid;
 		customGraphBase::graph1.setGraphRangeX(0, hours*60);
 		customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
 		customGraphBase::graph1MajorXAxisGrid.setInterval(customGraphInterval);
 		customGraphBase::graph1.setGraphRangeYAutoScaled(true,1);
-		customGraphBase::graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/4);
-		customGraphBase::graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/4);
-
-		customGraphBase::graph1MajorYAxisLabel.setInterval(1);
-		customGraphBase::graph1MajorYAxisGrid.setInterval(1);
+		customGraphBase::graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
+		customGraphBase::graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
 
 		timeLabel1_time = firstDataTime + customGraphInterval*60;
 		convert_timeStampToDateTime(&timeLabel1_time, &timeLabel1_time_tm);
@@ -91,11 +94,20 @@ void customGraph::setTimeRange(int hours)
 		updateTimeLabel(&timeLabel3, timeLabel3Buffer, &timeLabel3_time_tm);
 		updateTimeLabel(&timeLabel4, timeLabel4Buffer, &timeLabel4_time_tm);
 
-		customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		customGraphBase::timeLabel4.setX(graph1.getX() + (graph1.getGraphAreaWidth()*4/4) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel4.setX(graph1.getX() + (graph1.getGraphAreaWidth()*4/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
 
 		scrollCounter = 0;
 	}
+}
+
+
+void customGraph::setYAxisLabel(const char* name){
+	Unicode::snprintf(y_axisNameBuffer, 10, name);
+	y_axisName.setWildcard(y_axisNameBuffer);
+	y_axisName.invalidate();
+	y_axisName.resizeToCurrentText();
+	y_axisName.invalidate();
 }

@@ -45,6 +45,7 @@ customGraphBase::customGraphBase() :
 
     graph1MajorYAxisLabel.setInterval(40);
     graph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_P91H));
+    graph1MajorYAxisLabel.setLabelDecimals(1);
     graph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     graph1MajorYAxisLabel.setScale(10);
     graph1.addLeftElement(graph1MajorYAxisLabel);
@@ -57,7 +58,7 @@ customGraphBase::customGraphBase() :
 
     add(graph1);
 
-    debugText.setXY(94, 0);
+    debugText.setXY(126, 0);
     debugText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     debugText.setLinespacing(0);
     Unicode::snprintf(debugTextBuffer, DEBUGTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IZT7).getText());
@@ -110,6 +111,15 @@ customGraphBase::customGraphBase() :
     dateLabel.resizeToCurrentText();
     dateLabel.setTypedText(touchgfx::TypedText(T_DATE));
     add(dateLabel);
+
+    y_axisName.setXY(0, 0);
+    y_axisName.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    y_axisName.setLinespacing(0);
+    y_axisNameBuffer[0] = 0;
+    y_axisName.setWildcard(y_axisNameBuffer);
+    y_axisName.resizeToCurrentText();
+    y_axisName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_627Q));
+    add(y_axisName);
 }
 
 customGraphBase::~customGraphBase()

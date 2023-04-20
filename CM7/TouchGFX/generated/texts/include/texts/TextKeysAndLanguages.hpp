@@ -12,6 +12,7 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_627Q,
     T_TI,
     T_TIMEL3,
     T___SINGLEUSE_WAHU,

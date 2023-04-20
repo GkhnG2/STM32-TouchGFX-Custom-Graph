@@ -102,6 +102,7 @@
             "YAxisLabel": {
               "Type": "GraphLabel",
               "Interval": 40.0,
+              "NumberOfDecimals": 1,
               "DecimalSeparator": "Point",
               "TextId": "__SingleUse_P91H",
               "TextRotation": "0",
@@ -111,7 +112,7 @@
           {
             "Type": "TextArea",
             "Name": "debugText",
-            "X": 94,
+            "X": 126,
             "Width": 10,
             "Height": 20,
             "TextId": "__SingleUse_LR9V",
@@ -189,6 +190,19 @@
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_WAHU",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "y_axisName",
+            "Width": 74,
+            "Height": 20,
+            "TextId": "__SingleUse_627Q",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
               "UseBuffer": true,
               "BufferSize": 10
             }

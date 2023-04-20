@@ -54,6 +54,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard timeLabel2;
     touchgfx::TextAreaWithOneWildcard timeLabel1;
     touchgfx::TextAreaWithOneWildcard dateLabel;
+    touchgfx::TextAreaWithOneWildcard y_axisName;
 
     /*
      * Wildcard Buffers
@@ -70,6 +71,8 @@ protected:
     touchgfx::Unicode::UnicodeChar timeLabel1Buffer[TIMELABEL1_SIZE];
     static const uint16_t DATELABEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar dateLabelBuffer[DATELABEL_SIZE];
+    static const uint16_t Y_AXISNAME_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar y_axisNameBuffer[Y_AXISNAME_SIZE];
 
 private:
 
