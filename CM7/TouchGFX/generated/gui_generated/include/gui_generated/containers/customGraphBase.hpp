@@ -44,7 +44,6 @@ protected:
     touchgfx::Graph<500> graph1;
     touchgfx::GraphElementGridX graph1MajorXAxisGrid;
     touchgfx::GraphElementGridY graph1MajorYAxisGrid;
-    touchgfx::GraphLabelsX graph1MajorXAxisLabel;
     touchgfx::GraphLabelsY graph1MajorYAxisLabel;
     touchgfx::GraphElementLine graph1Line1;
     touchgfx::PainterRGB888 graph1Line1Painter;

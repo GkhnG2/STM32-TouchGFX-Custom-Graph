@@ -84,7 +84,7 @@ static void MX_LTDC_Init(void);
 void TouchGFX_Task(void *argument);
 
 /* USER CODE BEGIN PFP */
-
+static void User_GPIO_Init(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -168,7 +168,7 @@ Error_Handler();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-
+  User_GPIO_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -709,6 +709,80 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+static void User_GPIO_Init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+	__HAL_RCC_GPIOK_CLK_ENABLE();
+
+	/*Configure GPIO pin : LED1_Green_Pin */
+	GPIO_InitStruct.Pin = LED1_Green_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(LED1_Green_Port, &GPIO_InitStruct);
+	HAL_GPIO_WritePin(LED1_Green_Port, LED1_Green_Pin, GPIO_PIN_RESET);
+
+	/*Configure GPIO pin : LED2_Orange_Pin */
+	GPIO_InitStruct.Pin = LED2_Orange_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(LED2_Orange_Port, &GPIO_InitStruct);
+	HAL_GPIO_WritePin(LED2_Orange_Port, LED2_Orange_Pin, GPIO_PIN_RESET);
+
+	/*Configure GPIO pin : LED3_Red_Pin */
+	GPIO_InitStruct.Pin = LED3_Red_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(LED3_Red_Port, &GPIO_InitStruct);
+	HAL_GPIO_WritePin(LED3_Red_Port, LED3_Red_Pin, GPIO_PIN_RESET);
+
+	/*Configure GPIO pin : LED4_Blue_Pin */
+	GPIO_InitStruct.Pin = LED4_Blue_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(LED4_Blue_Port, &GPIO_InitStruct);
+	HAL_GPIO_WritePin(LED4_Blue_Port, LED4_Blue_Pin, GPIO_PIN_RESET);
+
+
+	/*Configure GPIO pin : JOY_SEL_Pin */
+	GPIO_InitStruct.Pin = JOY_SEL_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(JOY_SEL_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : JOY_DOWN_Pin */
+	GPIO_InitStruct.Pin = JOY_DOWN_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(JOY_DOWN_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : JOY_LEFT_Pin */
+	GPIO_InitStruct.Pin = JOY_LEFT_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(JOY_LEFT_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : JOY_RIGHT_Pin */
+	GPIO_InitStruct.Pin = JOY_RIGHT_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(JOY_RIGHT_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : JOY_UP_Pin */
+	GPIO_InitStruct.Pin = JOY_UP_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(JOY_UP_Port, &GPIO_InitStruct);
+}
 
 /* USER CODE END 4 */
 

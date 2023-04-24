@@ -78,7 +78,25 @@ extern int32_t DSI_IO_Read(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, ui
 #define VSYNC_FREQ_GPIO_Port GPIOJ
 
 /* USER CODE BEGIN Private defines */
+#define LED1_Green_Pin  GPIO_PIN_12
+#define LED1_Green_Port GPIOI
+#define LED2_Orange_Pin  GPIO_PIN_13
+#define LED2_Orange_Port GPIOI
+#define LED3_Red_Pin  GPIO_PIN_14
+#define LED3_Red_Port GPIOI
+#define LED4_Blue_Pin  GPIO_PIN_15
+#define LED4_Blue_Port GPIOI
 
+#define JOY_SEL_Pin  GPIO_PIN_2
+#define JOY_SEL_Port GPIOK
+#define JOY_DOWN_Pin  GPIO_PIN_3
+#define JOY_DOWN_Port GPIOK
+#define JOY_LEFT_Pin  GPIO_PIN_4
+#define JOY_LEFT_Port GPIOK
+#define JOY_RIGHT_Pin  GPIO_PIN_5
+#define JOY_RIGHT_Port GPIOK
+#define JOY_UP_Pin  GPIO_PIN_6
+#define JOY_UP_Port GPIOK
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

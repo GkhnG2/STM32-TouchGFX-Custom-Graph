@@ -19,11 +19,13 @@ public:
 
     void setTimeRange(int hours);			// 1,8 or 24
 
-    void  clearAllData();
+    void setYAxisLabel(const char* name);
 
-    void  setYAxisLabel(const char* name);
+    void setLineColor(uint32_t colorCode);
 
-    void  cleanUp();
+    void clearAllData();
+
+    void cleanUp();
 
 protected:
 
@@ -53,7 +55,7 @@ protected:
 
     void updateTimeLabel(touchgfx::TextAreaWithOneWildcard * timelabel, touchgfx::Unicode::UnicodeChar * timeLabelBuf, struct tm * time)
     {
-    	Unicode::snprintf(timeLabelBuf, 10, "%02dc%02d",time->tm_hour, time->tm_min);
+    	Unicode::snprintf(timeLabelBuf, 10, "%02d:%02d",time->tm_hour, time->tm_min);
     	timelabel->setWildcard(timeLabelBuf);
     	timelabel->invalidate();
     	timelabel->resizeToCurrentText();
@@ -139,10 +141,10 @@ protected:
 		timeLabel3_Pos = CWRUtil::muldiv_toQ5(((timeLabel3_pageCNTR*customGraphInterval*numberofGrid)+3*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
 		timeLabel4_Pos = CWRUtil::muldiv_toQ5(((timeLabel4_pageCNTR*customGraphInterval*numberofGrid)+4*customGraphInterval) - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
 
-		timeLabel1.setX(graph1.getX() + timeLabel1_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		timeLabel2.setX(graph1.getX() + timeLabel2_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		timeLabel3.setX(graph1.getX() + timeLabel3_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		timeLabel4.setX(graph1.getX() + timeLabel4_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		timeLabel1.setX(graph1.getX() + timeLabel1_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel1.getTextWidth()/2) + 1);
+		timeLabel2.setX(graph1.getX() + timeLabel2_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel2.getTextWidth()/2) + 1);
+		timeLabel3.setX(graph1.getX() + timeLabel3_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel3.getTextWidth()/2) + 1);
+		timeLabel4.setX(graph1.getX() + timeLabel4_Pos.round()  + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel4.getTextWidth()/2) + 1);
 
 	}
 
@@ -163,8 +165,6 @@ protected:
 			debugText.invalidate();
 			debugText.resizeToCurrentText();
 			debugText.invalidate();
-
-			setYAxisLabel("qwer");
 		}
 		if(value.clickEvent.getType() == ClickEvent::RELEASED){
 

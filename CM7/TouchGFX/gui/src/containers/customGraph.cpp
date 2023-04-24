@@ -13,17 +13,18 @@ void customGraph::initialize()
     convert_timeStampToDateTime(&firstDataTime, &firstDataTime_tm);
 
     addPoint(firstDataTime, float(1.0));
-	addPoint(firstDataTime + 1200, float(1.3));
-	addPoint(firstDataTime + 1200, float(1.8));
-	addPoint(firstDataTime + 2400, float(2.0));
-	addPoint(firstDataTime + 54000, float(333.5));
-	addPoint(firstDataTime + 55000, float(353.5));
-	addPoint(firstDataTime + 56000, float(343.5));
-	addPoint(firstDataTime + 57000, float(348.5));
-	addPoint(firstDataTime + 58000, float(379.5));
-	addPoint(firstDataTime + 72000, float(433.5));
+//	addPoint(firstDataTime + 1200, float(1.3));
+//	addPoint(firstDataTime + 1200, float(1.8));
+//	addPoint(firstDataTime + 2400, float(2.0));
+//	addPoint(firstDataTime + 54000, float(333.5));
+//	addPoint(firstDataTime + 55000, float(353.5));
+//	addPoint(firstDataTime + 56000, float(343.5));
+//	addPoint(firstDataTime + 57000, float(348.5));
+//	addPoint(firstDataTime + 58000, float(379.5));
+//	addPoint(firstDataTime + 72000, float(40000.5));
 
-	setTimeRange(1);
+	setTimeRange(24);
+	setYAxisLabel("Voltage");
 }
 
 
@@ -65,7 +66,7 @@ void customGraph::setTimeRange(int hours)
 		customGraphTimeRange = hours;
 		customGraphInterval = (hours*60)/numberofGrid;
 		customGraphBase::graph1.setGraphRangeX(0, hours*60);
-		customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
+		//customGraphBase::graph1MajorXAxisLabel.setInterval(customGraphInterval);
 		customGraphBase::graph1MajorXAxisGrid.setInterval(customGraphInterval);
 		customGraphBase::graph1.setGraphRangeYAutoScaled(true,1);
 		customGraphBase::graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
@@ -94,10 +95,10 @@ void customGraph::setTimeRange(int hours)
 		updateTimeLabel(&timeLabel3, timeLabel3Buffer, &timeLabel3_time_tm);
 		updateTimeLabel(&timeLabel4, timeLabel4Buffer, &timeLabel4_time_tm);
 
-		customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
-		customGraphBase::timeLabel4.setX(graph1.getX() + (graph1.getGraphAreaWidth()*4/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - 22);
+		customGraphBase::timeLabel1.setX(graph1.getX() + (graph1.getGraphAreaWidth()*1/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel1.getTextWidth()/2) + 1);
+		customGraphBase::timeLabel2.setX(graph1.getX() + (graph1.getGraphAreaWidth()*2/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel2.getTextWidth()/2) + 1);
+		customGraphBase::timeLabel3.setX(graph1.getX() + (graph1.getGraphAreaWidth()*3/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel3.getTextWidth()/2) + 1);
+		customGraphBase::timeLabel4.setX(graph1.getX() + (graph1.getGraphAreaWidth()*4/numberofGrid) + graph1.getGraphAreaMarginLeft() - graph1.getGraphAreaMarginRight() - (timeLabel4.getTextWidth()/2) + 1);
 
 		scrollCounter = 0;
 	}
@@ -110,4 +111,24 @@ void customGraph::setYAxisLabel(const char* name){
 	y_axisName.invalidate();
 	y_axisName.resizeToCurrentText();
 	y_axisName.invalidate();
+
+	y_axisName.setX(graph1.getX() + graph1.getGraphAreaMarginLeft() - (y_axisName.getTextWidth()/2));
+}
+
+
+void customGraph::setLineColor(uint32_t colorCode)
+{
+	graph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB((colorCode&0x00FF0000) >> 16, (colorCode&0x0000FF00) >> 8, colorCode&0x000000FF));
+}
+
+void customGraph::clearAllData()
+{
+	graph1.clear();
+}
+
+
+void customGraph::cleanUp()
+{
+	this->setVisible(false);
+	this->removeAll();
 }

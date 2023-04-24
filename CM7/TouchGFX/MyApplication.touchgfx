@@ -51,13 +51,12 @@
             "NumberOfValues": 500,
             "MaxX": 60.0,
             "PrecisionX": "1",
-            "MaxY": 100.0,
-            "MinY": -100.0,
+            "MaxY": 40000.0,
             "PrecisionY": "0.1",
             "XAxisScale": 1.0,
-            "LabelSizeTop": 25,
-            "LabelSizeBottom": 40,
-            "LabelSizeLeft": 45,
+            "LabelSizeTop": 30,
+            "LabelSizeBottom": 19,
+            "LabelSizeLeft": 55,
             "LabelSizeRight": 5,
             "GraphDrawers": [
               {
@@ -74,9 +73,8 @@
             "XAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
+                "Green": 97,
+                "Blue": 170
               },
               "Interval": 15.0,
               "LineWidth": 1
@@ -84,24 +82,15 @@
             "YAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
+                "Green": 97,
+                "Blue": 170
               },
-              "Interval": 20.0,
+              "Interval": 10000.0,
               "LineWidth": 1
-            },
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 15.0,
-              "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_64A2",
-              "TextRotation": "0",
-              "Position": "Bottom"
             },
             "YAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 40.0,
+              "Interval": 10000.0,
               "NumberOfDecimals": 1,
               "DecimalSeparator": "Point",
               "TextId": "__SingleUse_P91H",
@@ -128,7 +117,7 @@
             "Type": "TextArea",
             "Name": "timeLabel4",
             "X": 278,
-            "Y": 180,
+            "Y": 183,
             "Height": 20,
             "TextId": "timeL4",
             "TextRotation": "0",
@@ -142,7 +131,7 @@
             "Type": "TextArea",
             "Name": "timeLabel3",
             "X": 215,
-            "Y": 180,
+            "Y": 183,
             "Height": 20,
             "TextId": "timeL3",
             "TextRotation": "0",
@@ -156,7 +145,7 @@
             "Type": "TextArea",
             "Name": "timeLabel2",
             "X": 151,
-            "Y": 180,
+            "Y": 183,
             "Height": 20,
             "TextId": "timeL2",
             "TextRotation": "0",
@@ -170,7 +159,7 @@
             "Type": "TextArea",
             "Name": "timeLabel1",
             "X": 84,
-            "Y": 180,
+            "Y": 183,
             "Height": 20,
             "TextId": "timeL1",
             "TextRotation": "0",
@@ -183,7 +172,8 @@
           {
             "Type": "TextArea",
             "Name": "dateLabel",
-            "X": 215,
+            "X": 248,
+            "Y": 3,
             "Height": 20,
             "TextId": "date",
             "TextRotation": "0",
@@ -197,7 +187,8 @@
           {
             "Type": "TextArea",
             "Name": "y_axisName",
-            "Width": 74,
+            "X": 29,
+            "Y": 1,
             "Height": 20,
             "TextId": "__SingleUse_627Q",
             "TextRotation": "0",

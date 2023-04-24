@@ -19,31 +19,25 @@ customGraphBase::customGraphBase() :
     graph1.setPosition(0, 0, 310, 200);
     graph1.setScaleX(1);
     graph1.setScaleY(10);
-    graph1.setGraphAreaMargin(25, 45, 5, 40);
+    graph1.setGraphAreaMargin(30, 55, 5, 19);
     graph1.setGraphAreaPadding(0, 0, 0, 0);
     graph1.setGraphRangeX(0, 60);
-    graph1.setGraphRangeY(-100, 100);
+    graph1.setGraphRangeY(0, 40000);
     graph1.setDragAction(graphDraggedCallback);
     graph1.setClickAction(graphClickedCallback);
-    graph1MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    graph1MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 97, 170));
     graph1MajorXAxisGrid.setInterval(15);
     graph1MajorXAxisGrid.setLineWidth(1);
     graph1MajorXAxisGrid.setScale(1);
     graph1.addGraphElement(graph1MajorXAxisGrid);
 
-    graph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
-    graph1MajorYAxisGrid.setInterval(20);
+    graph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 97, 170));
+    graph1MajorYAxisGrid.setInterval(10000);
     graph1MajorYAxisGrid.setLineWidth(1);
     graph1MajorYAxisGrid.setScale(10);
     graph1.addGraphElement(graph1MajorYAxisGrid);
 
-    graph1MajorXAxisLabel.setInterval(15);
-    graph1MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_64A2));
-    graph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    graph1MajorXAxisLabel.setScale(1);
-    graph1.addBottomElement(graph1MajorXAxisLabel);
-
-    graph1MajorYAxisLabel.setInterval(40);
+    graph1MajorYAxisLabel.setInterval(10000);
     graph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_P91H));
     graph1MajorYAxisLabel.setLabelDecimals(1);
     graph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -67,7 +61,7 @@ customGraphBase::customGraphBase() :
     debugText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LR9V));
     add(debugText);
 
-    timeLabel4.setXY(278, 180);
+    timeLabel4.setXY(278, 183);
     timeLabel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     timeLabel4.setLinespacing(0);
     timeLabel4Buffer[0] = 0;
@@ -76,7 +70,7 @@ customGraphBase::customGraphBase() :
     timeLabel4.setTypedText(touchgfx::TypedText(T_TIMEL4));
     add(timeLabel4);
 
-    timeLabel3.setXY(215, 180);
+    timeLabel3.setXY(215, 183);
     timeLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     timeLabel3.setLinespacing(0);
     timeLabel3Buffer[0] = 0;
@@ -85,7 +79,7 @@ customGraphBase::customGraphBase() :
     timeLabel3.setTypedText(touchgfx::TypedText(T_TIMEL3));
     add(timeLabel3);
 
-    timeLabel2.setXY(151, 180);
+    timeLabel2.setXY(151, 183);
     timeLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     timeLabel2.setLinespacing(0);
     timeLabel2Buffer[0] = 0;
@@ -94,7 +88,7 @@ customGraphBase::customGraphBase() :
     timeLabel2.setTypedText(touchgfx::TypedText(T_TIMEL2));
     add(timeLabel2);
 
-    timeLabel1.setXY(84, 180);
+    timeLabel1.setXY(84, 183);
     timeLabel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     timeLabel1.setLinespacing(0);
     timeLabel1Buffer[0] = 0;
@@ -103,7 +97,7 @@ customGraphBase::customGraphBase() :
     timeLabel1.setTypedText(touchgfx::TypedText(T_TIMEL1));
     add(timeLabel1);
 
-    dateLabel.setXY(215, 0);
+    dateLabel.setXY(248, 3);
     dateLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     dateLabel.setLinespacing(0);
     Unicode::snprintf(dateLabelBuffer, DATELABEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_WAHU).getText());
@@ -112,7 +106,7 @@ customGraphBase::customGraphBase() :
     dateLabel.setTypedText(touchgfx::TypedText(T_DATE));
     add(dateLabel);
 
-    y_axisName.setXY(0, 0);
+    y_axisName.setXY(29, 1);
     y_axisName.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     y_axisName.setLinespacing(0);
     y_axisNameBuffer[0] = 0;
