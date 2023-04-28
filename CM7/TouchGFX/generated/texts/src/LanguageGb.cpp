@@ -7,20 +7,14 @@
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 
-// Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    12, // T___SINGLEUSE_627Q: "<>"
-    0,  // T_TI: "<>d"
-    12, // T_TIMEL3: "<>"
-    2,  // T___SINGLEUSE_WAHU: ""
-    12, // T_DATE: "<>"
-    12, // T_TIMEL4: "<>"
-    12, // T_TIMEL2: "<>"
-    14, // T___SINGLEUSE_IZT7: "1"
-    12, // T_TIMEL1: "<>"
-    12, // T___SINGLEUSE_LR9V: "<>"
-    3,  // T_RESOURCEID2: "New Text"
-    12, // T_RESOURCEID1: "<>"
-    12  // T___SINGLEUSE_P91H: "<>"
+    0, // T___SingleUse_NZ5N
+    0, // T___SingleUse_PLIR
+    0, // T_timeL4
+    0, // T_timeL3
+    0, // T_timeL2
+    0, // T_timeL1
+    0, // T_date
+    0 // T___SingleUse_8JSV
 };

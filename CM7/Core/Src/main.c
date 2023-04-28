@@ -165,8 +165,6 @@ Error_Handler();
   MX_DSIHOST_DSI_Init();
   MX_LTDC_Init();
   MX_TouchGFX_Init();
-  /* Call PreOsInit function */
-  MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
   User_GPIO_Init();
   /* USER CODE END 2 */
@@ -232,7 +230,7 @@ void SystemClock_Config(void)
 
   /** Configure the main internal regulator output voltage
   */
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE0);
 
   while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
 
@@ -666,23 +664,17 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LCD_RESET_GPIO_Port, LCD_RESET_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(MCU_ACTIVE_GPIO_Port, MCU_ACTIVE_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOJ, FRAME_RATE_Pin|RENDER_TIME_Pin|VSYNC_FREQ_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pins : LCD_BL_Pin FRAME_RATE_Pin RENDER_TIME_Pin VSYNC_FREQ_Pin */
-  GPIO_InitStruct.Pin = LCD_BL_Pin|FRAME_RATE_Pin|RENDER_TIME_Pin|VSYNC_FREQ_Pin;
+  /*Configure GPIO pin : LCD_BL_Pin */
+  GPIO_InitStruct.Pin = LCD_BL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
+  HAL_GPIO_Init(LCD_BL_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA8 */
   GPIO_InitStruct.Pin = GPIO_PIN_8;
@@ -699,13 +691,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(LCD_RESET_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : MCU_ACTIVE_Pin */
-  GPIO_InitStruct.Pin = MCU_ACTIVE_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  HAL_GPIO_Init(MCU_ACTIVE_GPIO_Port, &GPIO_InitStruct);
-
 }
 
 /* USER CODE BEGIN 4 */
@@ -721,7 +706,7 @@ static void User_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(LED1_Green_Port, &GPIO_InitStruct);
-	HAL_GPIO_WritePin(LED1_Green_Port, LED1_Green_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED1_Green_Port, LED1_Green_Pin, GPIO_PIN_SET);
 
 	/*Configure GPIO pin : LED2_Orange_Pin */
 	GPIO_InitStruct.Pin = LED2_Orange_Pin;
@@ -729,7 +714,7 @@ static void User_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(LED2_Orange_Port, &GPIO_InitStruct);
-	HAL_GPIO_WritePin(LED2_Orange_Port, LED2_Orange_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED2_Orange_Port, LED2_Orange_Pin, GPIO_PIN_SET);
 
 	/*Configure GPIO pin : LED3_Red_Pin */
 	GPIO_InitStruct.Pin = LED3_Red_Pin;
@@ -737,7 +722,7 @@ static void User_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(LED3_Red_Port, &GPIO_InitStruct);
-	HAL_GPIO_WritePin(LED3_Red_Port, LED3_Red_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED3_Red_Port, LED3_Red_Pin, GPIO_PIN_SET);
 
 	/*Configure GPIO pin : LED4_Blue_Pin */
 	GPIO_InitStruct.Pin = LED4_Blue_Pin;
@@ -745,7 +730,7 @@ static void User_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(LED4_Blue_Port, &GPIO_InitStruct);
-	HAL_GPIO_WritePin(LED4_Blue_Port, LED4_Blue_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED4_Blue_Port, LED4_Blue_Pin, GPIO_PIN_SET);
 
 
 	/*Configure GPIO pin : JOY_SEL_Pin */
@@ -783,7 +768,6 @@ static void User_GPIO_Init(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(JOY_UP_Port, &GPIO_InitStruct);
 }
-
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_TouchGFX_Task */

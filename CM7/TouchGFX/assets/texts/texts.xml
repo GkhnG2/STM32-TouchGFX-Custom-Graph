@@ -1,56 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.21.3">
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.19.1">
   <Languages>
     <Language Id="GB" />
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_627Q" Alignment="Left" TypographyId="Medium">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="ti" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt;d</Translation>
-      </Text>
-      <Text Id="timeL3" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_WAHU" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB" />
-      </Text>
-      <Text Id="date" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="timeL4" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="timeL2" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_IZT7" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="timeL1" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_LR9V" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="ResourceId2" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">New Text</Translation>
-      </Text>
-      <Text Id="ResourceId1" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_NZ5N" Alignment="Right" TypographyId="customSmall">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_P91H" Alignment="Right" TypographyId="Small">
-        <Translation Language="GB">&lt;&gt;</Translation>
+      <Text Id="__SingleUse_PLIR" Alignment="Left" TypographyId="customSmall">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="timeL4" Alignment="Center" TypographyId="customSmall">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="timeL3" Alignment="Center" TypographyId="customSmall">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="timeL2" Alignment="Center" TypographyId="customSmall">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="timeL1" Alignment="Center" TypographyId="customSmall">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="date" Alignment="Left" TypographyId="customSmall">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8JSV" Alignment="Left" TypographyId="customMedium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter=":" WildcardCharacters="0x41-0x5A" WildcardCharacterRanges="0x41-0x5A,a-z,A-Z,0-9" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Small" Font="verdana.ttf" Size="12" Bpp="4" Direction="LTR" FallbackCharacter=":" WildcardCharacters="0x41-0x5A" WidgetWildcardCharacters="-., 0123456789" WildcardCharacterRanges="0x41-0x5A,a-z,A-Z,0-9" />
-    <Typography Id="Medium" Font="verdana.ttf" Size="14" Bpp="4" Direction="LTR" FallbackCharacter=":" WildcardCharacterRanges="0x41-0x5A,a-z,A-Z,0-9" />
+    <Typography Id="customDefault" Font="verdana.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter=":" WildcardCharacters="0x20-0x7F" WildcardCharacterRanges="0x20-0x7F" />
+    <Typography Id="customLarge" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="customSmall" Font="verdana.ttf" Size="12" Bpp="4" Direction="LTR" FallbackCharacter=":" WildcardCharacters="0x20-0x7F" WidgetWildcardCharacters="-., 0123456789" WildcardCharacterRanges="0x20-0x7F" />
+    <Typography Id="customMedium" Font="verdana.ttf" Size="14" Bpp="4" Direction="LTR" FallbackCharacter=":" WildcardCharacters="0x20-0x7F" WildcardCharacterRanges="0x20-0x7F" />
   </Typographies>
 </TextDatabase>

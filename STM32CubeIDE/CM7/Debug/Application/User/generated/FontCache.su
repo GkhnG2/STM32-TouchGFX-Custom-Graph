@@ -19,4 +19,4 @@ C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/fonts/src/FontCache.cpp
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/fonts/src/FontCache.cpp:184:6:bool touchgfx::FontCache::cacheSortedString(touchgfx::TypedText)	64	static
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/fonts/src/FontCache.cpp:158:6:bool touchgfx::FontCache::cacheString(touchgfx::TypedText, const UnicodeChar*)	32	static
 C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/fonts/src/FontCache.cpp:171:6:bool touchgfx::FontCache::cacheLigatures(touchgfx::CachedFont*, touchgfx::TypedText, const UnicodeChar*)	48	static
-C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/fonts/src/FontCache.cpp:79:6:void touchgfx::FontCache::initializeCachedFont(touchgfx::TypedText, touchgfx::CachedFont*, bool)	152	static
+C:/TouchGFXProjects/MyApplication/CM7/TouchGFX/generated/fonts/src/FontCache.cpp:79:6:void touchgfx::FontCache::initializeCachedFont(touchgfx::TypedText, touchgfx::CachedFont*, bool)	144	static

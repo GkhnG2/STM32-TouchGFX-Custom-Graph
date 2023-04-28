@@ -18,14 +18,10 @@
     "Family": "STM32H7",
     "SubFamily": "STM32H747/757",
     "Platform": "m7",
-    "Toolchain": "STM32CubeIDE",
     "ProjectFile": "../../STM32H747I-DISCO.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [
-    ],
-    "AdditionalFeatures": [
-      "Vector"
-    ],
+    ]
   },
-  "Version": "4.21.3"
+  "Version": "4.19.1"
 }

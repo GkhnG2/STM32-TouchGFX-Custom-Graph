@@ -218,7 +218,7 @@ public:
     {
         assert(handle < no_streams);
 
-        if (output_format != Bitmap::RGB565 && output_format != Bitmap::RGB888 && output_format != Bitmap::ARGB8888)
+        if (output_format != Bitmap::RGB565 && output_format != Bitmap::RGB888)
         {
             return;
         }
@@ -229,21 +229,7 @@ public:
             const touchgfx::Rect& absolute = widget.getAbsoluteRect();
 
             // Get frame buffer pointer to upper left of widget in framebuffer coordinates
-            switch(output_format)
-            {
-                case Bitmap::RGB565:
-                    wbuf += (absolute.x + absolute.y * touchgfx::HAL::FRAME_BUFFER_WIDTH) * 2;
-                    break;
-                case Bitmap::RGB888:
-                    wbuf += (absolute.x + absolute.y * touchgfx::HAL::FRAME_BUFFER_WIDTH) * 3;
-                    break;
-                case Bitmap::ARGB8888:
-                    wbuf += (absolute.x + absolute.y * touchgfx::HAL::FRAME_BUFFER_WIDTH) * 4;
-                    break;
-                default:
-                    break;
-            }
-
+            wbuf += (absolute.x + absolute.y * touchgfx::HAL::FRAME_BUFFER_WIDTH) * ((output_format == Bitmap::RGB565) ? 2 : 3);
             // Decode relevant part of the frame to the framebuffer
             mjpegDecoders[handle]->decodeFrame(invalidatedArea, wbuf, touchgfx::HAL::FRAME_BUFFER_WIDTH);
             // Release frame buffer

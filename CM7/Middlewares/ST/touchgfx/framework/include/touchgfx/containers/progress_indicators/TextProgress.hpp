@@ -1,8 +1,8 @@
 /******************************************************************************
-* Copyright (c) 2018(-2023) STMicroelectronics.
+* Copyright (c) 2018(-2022) STMicroelectronics.
 * All rights reserved.
 *
-* This file is part of the TouchGFX 4.21.3 distribution.
+* This file is part of the TouchGFX 4.19.1 distribution.
 *
 * This software is licensed under terms that can be found in the LICENSE file in
 * the root directory of this software component.
@@ -66,7 +66,7 @@ public:
      *
      * @see setTypedText
      */
-    virtual const TypedText& getTypedText() const;
+    virtual TypedText getTypedText() const;
 
     /**
      * Sets the color of the text in the used text area.

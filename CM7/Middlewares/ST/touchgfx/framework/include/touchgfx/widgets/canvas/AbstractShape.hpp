@@ -1,8 +1,8 @@
 /******************************************************************************
-* Copyright (c) 2018(-2023) STMicroelectronics.
+* Copyright (c) 2018(-2022) STMicroelectronics.
 * All rights reserved.
 *
-* This file is part of the TouchGFX 4.21.3 distribution.
+* This file is part of the TouchGFX 4.19.1 distribution.
 *
 * This software is licensed under terms that can be found in the LICENSE file in
 * the root directory of this software component.
@@ -205,14 +205,14 @@ public:
      * Gets the position of the shapes (0,0).
      *
      * @tparam T Generic type parameter, either int or float.
-     * @param [out] xOrigin The x coordinate rounded down to the precision of T.
-     * @param [out] yOrigin The y coordinate rounded down to the precision of T.
+     * @param [out] dx The x coordinate rounded down to the precision of T.
+     * @param [out] dy The y coordinate rounded down to the precision of T.
      */
     template <typename T>
-    void getOrigin(T& xOrigin, T& yOrigin) const
+    void getOrigin(T& dx, T& dy) const
     {
-        xOrigin = dx.to<T>();
-        yOrigin = dy.to<T>();
+        dx = this->dx.to<T>();
+        dy = this->dy.to<T>();
     }
 
     /**
@@ -390,30 +390,6 @@ public:
         y = yScale.to<T>();
     }
 
-    /**
-     * Sets the filling rule to be used when rendering the outline.
-     *
-     * @param  rule The filling rule.
-     *
-     * @see getFillingRule
-     */
-    void setFillingRule(Rasterizer::FillingRule rule)
-    {
-        fillingRule = rule;
-    }
-
-    /**
-     * Gets the filling rule being used when rendering the outline.
-     *
-     * @return The filling rule.
-     *
-     * @see setFillingRule
-     */
-    Rasterizer::FillingRule getFillingRule() const
-    {
-        return fillingRule;
-    }
-
     virtual bool drawCanvasWidget(const Rect& invalidatedArea) const;
 
     /**
@@ -424,8 +400,6 @@ public:
     void updateAbstractShapeCache();
 
 protected:
-    Rasterizer::FillingRule fillingRule; ///< The filling rule used by the rasterizer
-
     /**
      * Sets the cached coordinates of a given point/corner. The coordinates in the cache are
      * the coordinates from the corners after rotation and scaling has been applied to the

@@ -12,14 +12,10 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-
     void handleTickEvent();
-
 protected:
-    int tickCounter;
-    int tickCounter2;
-    int Counter = 0;
-    int Counter2 = 0;
+    uint32_t testCNTR=0;
+	time_t firstTime = 1681492804;
 };
 
 #endif // SCREEN1VIEW_HPP

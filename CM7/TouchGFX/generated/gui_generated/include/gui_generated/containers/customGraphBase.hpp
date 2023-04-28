@@ -9,15 +9,15 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/graph/Graph.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
-#include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class customGraphBase : public touchgfx::Container
 {
 public:
     customGraphBase();
-    virtual ~customGraphBase();
+    virtual ~customGraphBase() {}
     virtual void initialize();
 
     /*
@@ -27,6 +27,7 @@ public:
     {
         // Override and implement this function in customGraph
     }
+
     virtual void graph1clicked(AbstractDataGraph::GraphClickEvent value)
     {
         // Override and implement this function in customGraph
@@ -41,12 +42,12 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::Graph<500> graph1;
+    touchgfx::Graph<1000> graph1;
+    touchgfx::GraphElementLine graph1Line1;
+    touchgfx::PainterRGB888 graph1Line1Painter;
     touchgfx::GraphElementGridX graph1MajorXAxisGrid;
     touchgfx::GraphElementGridY graph1MajorYAxisGrid;
     touchgfx::GraphLabelsY graph1MajorYAxisLabel;
-    touchgfx::GraphElementLine graph1Line1;
-    touchgfx::PainterRGB888 graph1Line1Painter;
     touchgfx::TextAreaWithOneWildcard debugText;
     touchgfx::TextAreaWithOneWildcard timeLabel4;
     touchgfx::TextAreaWithOneWildcard timeLabel3;
@@ -70,22 +71,14 @@ protected:
     touchgfx::Unicode::UnicodeChar timeLabel1Buffer[TIMELABEL1_SIZE];
     static const uint16_t DATELABEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar dateLabelBuffer[DATELABEL_SIZE];
-    static const uint16_t Y_AXISNAME_SIZE = 10;
+    static const uint16_t Y_AXISNAME_SIZE = 20;
     touchgfx::Unicode::UnicodeChar y_axisNameBuffer[Y_AXISNAME_SIZE];
 
 private:
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&> graphDraggedCallback;
     touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphClickEvent&> graphClickedCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value);
+    touchgfx::Callback<customGraphBase, const touchgfx::AbstractDataGraph&, const touchgfx::AbstractDataGraph::GraphDragEvent&> graphDraggedCallback;
     void graphClickedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphClickEvent& value);
+    void graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value);
 
 };
 

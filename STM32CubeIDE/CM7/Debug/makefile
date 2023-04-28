@@ -20,7 +20,6 @@ RM := rm -rf
 -include Application/User/TouchGFX/target/subdir.mk
 -include Application/User/TouchGFX/App/subdir.mk
 -include Application/User/Startup/subdir.mk
--include Application/User/Core/Inc/subdir.mk
 -include Application/User/Core/subdir.mk
 -include objects.mk
 

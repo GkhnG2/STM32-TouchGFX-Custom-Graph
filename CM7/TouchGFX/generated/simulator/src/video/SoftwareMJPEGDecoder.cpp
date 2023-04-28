@@ -15,9 +15,6 @@ struct JPEG_RGB
     uint8_t B;
     uint8_t G;
     uint8_t R;
-#if VIDEO_DECODE_FORMAT == 32
-    uint8_t X;
-#endif
 };
 } // namespace
 
@@ -313,7 +310,7 @@ void SoftwareMJPEGDecoder::readVideoHeader()
     firstFrameOffset = currentMovieOffset;
 }
 
-#if VIDEO_DECODE_FORMAT == 16 || VIDEO_DECODE_FORMAT == 24 || VIDEO_DECODE_FORMAT == 32
+#if VIDEO_DECODE_FORMAT == 16 || VIDEO_DECODE_FORMAT == 24
 void SoftwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t* const mjpgdata, const uint32_t length, uint8_t* outputBuffer, uint16_t bufferWidth, uint16_t bufferHeight, uint32_t bufferStride)
 {
     if (length == 0)
@@ -353,11 +350,9 @@ void SoftwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t* const mjpgdata, const
         const uint32_t height = MIN(bufferHeight, cinfo.output_height);
 
 #if VIDEO_DECODE_FORMAT == 16
-        uint16_t* lineptr = reinterpret_cast<uint16_t*>(outputBuffer);
-#elif VIDEO_DECODE_FORMAT == 24
-        uint8_t* lineptr = outputBuffer;
+        uint16_t* lineptr = (uint16_t*)outputBuffer;
 #else
-        uint32_t* lineptr = reinterpret_cast<uint32_t*>(outputBuffer);
+        uint8_t* lineptr = outputBuffer;
 #endif
         while (cinfo.output_scanline < height)
         {
@@ -372,19 +367,9 @@ void SoftwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t* const mjpgdata, const
                 RGB_matrix++;
             }
             lineptr = (uint16_t*)((uint8_t*)lineptr + bufferStride - width * 2); //move to next line
-#elif VIDEO_DECODE_FORMAT == 24
+#else
             memcpy(lineptr, lineBuffer, width * 3);
             lineptr += bufferStride; //move to next line
-#else
-            JPEG_RGB* RGB_matrix = (JPEG_RGB*)lineBuffer;
-            JPEG_RGB* const RGB_end = RGB_matrix + width;
-            while (RGB_matrix < RGB_end)
-            {
-                const uint32_t pix = (0xFF << 24) | (RGB_matrix->R << 16) | (RGB_matrix->G << 8) | (RGB_matrix->B);
-                *lineptr++ = pix;
-                RGB_matrix++;
-            }
-            lineptr = (uint32_t*)((uint8_t*)lineptr + bufferStride - width * 4); //move to next line
 #endif
         }
 
@@ -450,14 +435,11 @@ bool SoftwareMJPEGDecoder::decodeFrame(const touchgfx::Rect& area, uint8_t* fram
     const uint32_t endX = MIN((uint32_t)area.right(), cinfo.image_width);
 
 #if VIDEO_DECODE_FORMAT == 16
-    uint16_t* lineptr = reinterpret_cast<uint16_t*>(frameBuffer);
+    uint16_t* lineptr = (uint16_t*)frameBuffer;
     lineptr += framebuffer_width * startY;
-#elif VIDEO_DECODE_FORMAT == 24
+#else
     uint8_t* lineptr = frameBuffer;
     lineptr += framebuffer_width * 3 * startY;
-#else
-    uint32_t* lineptr = reinterpret_cast<uint32_t*>(frameBuffer);
-    lineptr += framebuffer_width * startY;
 #endif
     const uint32_t endY = MIN((uint32_t)area.bottom(), cinfo.output_height);
 
@@ -474,12 +456,9 @@ bool SoftwareMJPEGDecoder::decodeFrame(const touchgfx::Rect& area, uint8_t* fram
             *(lineptr + counter) = pix;
         }
         lineptr += framebuffer_width; //move to next line
-#elif VIDEO_DECODE_FORMAT == 24
+#else
         memcpy(lineptr + startX * 3, lineBuffer + startX * 3, (endX - startX) * 3);
         lineptr += framebuffer_width * 3; //move to next line
-#else
-        memcpy(lineptr + startX, lineBuffer + startX * 4, (endX - startX) * 4);
-        lineptr += framebuffer_width; //move to next line
 #endif
     }
 
@@ -503,7 +482,7 @@ bool SoftwareMJPEGDecoder::decodeFrame(const touchgfx::Rect&, uint8_t*, uint32_t
 {
     return true;
 }
-#endif // VIDEO_DECODE_FORMAT == 16 || VIDEO_DECODE_FORMAT == 24 || VIDEO_DECODE_FORMAT == 32
+#endif // VIDEO_DECODE_FORMAT == 16 || VIDEO_DECODE_FORMAT == 24
 
 bool SoftwareMJPEGDecoder::decodeThumbnail(uint32_t frameno, uint8_t* buffer, uint16_t width, uint16_t height)
 {
@@ -540,7 +519,7 @@ void SoftwareMJPEGDecoder::getVideoInfo(touchgfx::VideoInformation* data)
 {
     *data = videoInfo;
     // For unsupported decode formats, set video dimension to 0x0, to avoid drawing anything
-#if VIDEO_DECODE_FORMAT == 16 || VIDEO_DECODE_FORMAT == 24 || VIDEO_DECODE_FORMAT == 32
+#if VIDEO_DECODE_FORMAT == 16 || VIDEO_DECODE_FORMAT == 24
 #else
     data->frame_width = 0;
     data->frame_height = 0;

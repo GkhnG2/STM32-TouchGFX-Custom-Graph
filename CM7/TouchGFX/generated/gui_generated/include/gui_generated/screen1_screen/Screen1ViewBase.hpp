@@ -15,7 +15,7 @@ class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
 public:
     Screen1ViewBase();
-    virtual ~Screen1ViewBase();
+    virtual ~Screen1ViewBase() {}
     virtual void setupScreen();
 
 protected:
@@ -35,9 +35,8 @@ private:
     /*
      * Canvas Buffer Size
      */
-    static const uint32_t CANVAS_BUFFER_SIZE = 12000;
+    static const uint16_t CANVAS_BUFFER_SIZE = 7200;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
-
 };
 
 #endif // SCREEN1VIEWBASE_HPP

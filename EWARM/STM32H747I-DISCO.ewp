@@ -2192,19 +2192,6 @@
             <configuration>STM32H747I-DISCO_CM4</configuration>
             <configuration>STM32H747I-DISCO_CM4</configuration>
           </excluded>
-          <group>
-            <name>Inc</name>
-            <excluded>
-              <configuration>STM32H747I-DISCO_CM4</configuration>
-              <configuration>STM32H747I-DISCO_CM4</configuration>
-            </excluded>
-            <file>
-              <name>$PROJ_DIR$/../CM7/Core/Inc/nema_hal_threadx.c</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$/../CM7/Core/Inc/nema_hal.c</name>
-            </file>
-          </group>
           <file>
             <name>$PROJ_DIR$/../CM7/Core/Src/main.c</name>
           </file>

@@ -3,20 +3,20 @@
     "Screens": [
       {
         "Name": "Screen1",
-        "CanvasBufferSize": 12000,
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "Image",
             "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_800x480_shattered_rain_dark.png"
+            "Width": 480,
+            "Height": 800,
+            "RelativeFilename": "__designer\\Dark_Backgrounds_main_bg_portrait_texture_480x800px.png"
           },
           {
             "Type": "CustomContainerInstance",
             "Name": "customGraph1",
-            "X": 245,
-            "Y": 140,
+            "X": 85,
+            "Y": 300,
             "Width": 310,
             "Height": 200,
             "CustomContainerDefinitionName": "customGraph"
@@ -47,8 +47,8 @@
             "Name": "graph1",
             "Width": 310,
             "Height": 200,
-            "DataSeed": 246953492,
-            "NumberOfValues": 500,
+            "DataSeed": 2046926718,
+            "NumberOfValues": 1000,
             "MaxX": 60.0,
             "PrecisionX": "1",
             "MaxY": 40000.0,
@@ -62,7 +62,6 @@
               {
                 "Type": "LineDrawer",
                 "LineWidth": 4,
-                "FileNameImage": "",
                 "Color": {
                   "Red": 50,
                   "Green": 194,
@@ -93,7 +92,7 @@
               "Interval": 10000.0,
               "NumberOfDecimals": 1,
               "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_P91H",
+              "TextId": "__SingleUse_NZ5N",
               "TextRotation": "0",
               "Position": "Left"
             }
@@ -102,13 +101,12 @@
             "Type": "TextArea",
             "Name": "debugText",
             "X": 126,
-            "Width": 10,
-            "Height": 20,
-            "TextId": "__SingleUse_LR9V",
+            "Height": 14,
+            "Visible": false,
+            "TextId": "__SingleUse_PLIR",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_IZT7",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -118,7 +116,7 @@
             "Name": "timeLabel4",
             "X": 278,
             "Y": 183,
-            "Height": 20,
+            "Height": 14,
             "TextId": "timeL4",
             "TextRotation": "0",
             "AutoSize": true,
@@ -132,7 +130,7 @@
             "Name": "timeLabel3",
             "X": 215,
             "Y": 183,
-            "Height": 20,
+            "Height": 14,
             "TextId": "timeL3",
             "TextRotation": "0",
             "AutoSize": true,
@@ -146,7 +144,7 @@
             "Name": "timeLabel2",
             "X": 151,
             "Y": 183,
-            "Height": 20,
+            "Height": 14,
             "TextId": "timeL2",
             "TextRotation": "0",
             "AutoSize": true,
@@ -160,7 +158,7 @@
             "Name": "timeLabel1",
             "X": 84,
             "Y": 183,
-            "Height": 20,
+            "Height": 14,
             "TextId": "timeL1",
             "TextRotation": "0",
             "AutoSize": true,
@@ -174,12 +172,11 @@
             "Name": "dateLabel",
             "X": 248,
             "Y": 3,
-            "Height": 20,
+            "Height": 14,
             "TextId": "date",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_WAHU",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -189,13 +186,13 @@
             "Name": "y_axisName",
             "X": 29,
             "Y": 1,
-            "Height": 20,
-            "TextId": "__SingleUse_627Q",
+            "Height": 17,
+            "TextId": "__SingleUse_8JSV",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 20
             }
           }
         ],
@@ -233,6 +230,7 @@
     "SelectedColorDepth": 24,
     "StartupScreenName": "Screen1",
     "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
     "AvailableColorDepths": [
@@ -270,18 +268,13 @@
     "LandscapeSkinY": 0,
     "PortraitSkinX": 0,
     "PortraitSkinY": 0,
-    "DisplayOrientation": "Landscape",
+    "DisplayOrientation": "Portrait",
     "Family": "STM32H7",
-    "SubFamily": "STM32H747/757",
-    "Toolchain": "STM32CubeIDE",
     "Platform": "m7",
     "ProjectFile": "../../STM32H747I-DISCO.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
-    "OptionalComponents": [],
-    "AdditionalFeatures": [
-      "Vector"
-    ]
+    "OptionalComponents": []
   },
-  "Version": "4.21.3",
-  "CreatedBy": "4.21.3"
+  "Version": "4.19.1",
+  "CreatedBy": "4.19.1"
 }

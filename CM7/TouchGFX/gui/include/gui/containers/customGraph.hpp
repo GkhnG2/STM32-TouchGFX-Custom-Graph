@@ -132,6 +132,11 @@ protected:
 		}
 
 		graph1.setGraphRangeX(0 + int(scrollCounter), (graph1.getGraphRangeXMaxAsInt() - graph1.getGraphRangeXMinAsInt()) + int(scrollCounter));
+		Unicode::snprintf(debugTextBuffer, 10, "%d", (graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
+		debugText.setWildcard(debugTextBuffer);
+		debugText.invalidate();
+		debugText.resizeToCurrentText();
+		debugText.invalidate();
 		graph1.setGraphRangeYAuto(true,(graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
 		graph1MajorYAxisLabel.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
 		graph1MajorYAxisGrid.setInterval((graph1.getGraphRangeYMaxAsInt() - graph1.getGraphRangeYMinAsInt())/float(numberofGrid));
@@ -156,15 +161,12 @@ protected:
 		if(value.clickEvent.getType() == ClickEvent::PRESSED){
 			//Unicode::snprintf(debugTextBuffer, 10, "%d", graph1.getUsedCapacity());
 			//x = graph1.int2scaledX(value.index);
-			test = CWRUtil::muldiv_toQ5(12 - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
-			Unicode::snprintf(debugTextBuffer, 10, "%d", test.round());
-			//Unicode::snprintf(debugTextBuffer, 10, "%d", graph1.indexToScreenX(value.index));
-			//Unicode::snprintf(debugTextBuffer, 10, "%d", graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled());
-			//Unicode::snprintf(debugTextBuffer, 10, "%d", graph1.getGraphAreaPaddingLeft());
-			debugText.setWildcard(debugTextBuffer);
-			debugText.invalidate();
-			debugText.resizeToCurrentText();
-			debugText.invalidate();
+//			test = CWRUtil::muldiv_toQ5(12 - graph1.getGraphRangeXMinScaled(), graph1.getGraphAreaWidth() - 1, graph1.getGraphRangeXMaxScaled() - graph1.getGraphRangeXMinScaled()) + CWRUtil::toQ5(graph1.getGraphAreaPaddingLeft());
+//			Unicode::snprintf(debugTextBuffer, 10, "%d", test.round());
+//			debugText.setWildcard(debugTextBuffer);
+//			debugText.invalidate();
+//			debugText.resizeToCurrentText();
+//			debugText.invalidate();
 		}
 		if(value.clickEvent.getType() == ClickEvent::RELEASED){
 

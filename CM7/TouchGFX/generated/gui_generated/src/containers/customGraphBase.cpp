@@ -3,45 +3,44 @@
 /*********************************************************************************/
 #include <gui_generated/containers/customGraphBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
 customGraphBase::customGraphBase() :
-    graphDraggedCallback(this, &customGraphBase::graphDraggedCallbackHandler),
-    graphClickedCallback(this, &customGraphBase::graphClickedCallbackHandler)
+    graphClickedCallback(this, &customGraphBase::graphClickedCallbackHandler),
+    graphDraggedCallback(this, &customGraphBase::graphDraggedCallbackHandler)
 {
     setWidth(310);
     setHeight(200);
     box1.setPosition(0, 0, 310, 200);
     box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    add(box1);
 
-    graph1.setPosition(0, 0, 310, 200);
     graph1.setScaleX(1);
     graph1.setScaleY(10);
+    graph1.setPosition(0, 0, 310, 200);
     graph1.setGraphAreaMargin(30, 55, 5, 19);
     graph1.setGraphAreaPadding(0, 0, 0, 0);
     graph1.setGraphRangeX(0, 60);
     graph1.setGraphRangeY(0, 40000);
-    graph1.setDragAction(graphDraggedCallback);
     graph1.setClickAction(graphClickedCallback);
+    graph1.setDragAction(graphDraggedCallback);
+
+    graph1MajorXAxisGrid.setScale(1);
     graph1MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 97, 170));
     graph1MajorXAxisGrid.setInterval(15);
     graph1MajorXAxisGrid.setLineWidth(1);
-    graph1MajorXAxisGrid.setScale(1);
     graph1.addGraphElement(graph1MajorXAxisGrid);
 
+    graph1MajorYAxisGrid.setScale(10);
     graph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 97, 170));
     graph1MajorYAxisGrid.setInterval(10000);
     graph1MajorYAxisGrid.setLineWidth(1);
-    graph1MajorYAxisGrid.setScale(10);
     graph1.addGraphElement(graph1MajorYAxisGrid);
 
+    graph1MajorYAxisLabel.setScale(10);
     graph1MajorYAxisLabel.setInterval(10000);
-    graph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_P91H));
+    graph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_NZ5N));
     graph1MajorYAxisLabel.setLabelDecimals(1);
     graph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    graph1MajorYAxisLabel.setScale(10);
     graph1.addLeftElement(graph1MajorYAxisLabel);
 
     graph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(50, 194, 55));
@@ -49,17 +48,14 @@ customGraphBase::customGraphBase() :
     graph1Line1.setLineWidth(4);
     graph1.addGraphElement(graph1Line1);
 
-
-    add(graph1);
-
     debugText.setXY(126, 0);
+    debugText.setVisible(false);
     debugText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     debugText.setLinespacing(0);
-    Unicode::snprintf(debugTextBuffer, DEBUGTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IZT7).getText());
+    debugTextBuffer[0] = 0;
     debugText.setWildcard(debugTextBuffer);
     debugText.resizeToCurrentText();
-    debugText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LR9V));
-    add(debugText);
+    debugText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PLIR));
 
     timeLabel4.setXY(278, 183);
     timeLabel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -68,7 +64,6 @@ customGraphBase::customGraphBase() :
     timeLabel4.setWildcard(timeLabel4Buffer);
     timeLabel4.resizeToCurrentText();
     timeLabel4.setTypedText(touchgfx::TypedText(T_TIMEL4));
-    add(timeLabel4);
 
     timeLabel3.setXY(215, 183);
     timeLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -77,7 +72,6 @@ customGraphBase::customGraphBase() :
     timeLabel3.setWildcard(timeLabel3Buffer);
     timeLabel3.resizeToCurrentText();
     timeLabel3.setTypedText(touchgfx::TypedText(T_TIMEL3));
-    add(timeLabel3);
 
     timeLabel2.setXY(151, 183);
     timeLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -86,7 +80,6 @@ customGraphBase::customGraphBase() :
     timeLabel2.setWildcard(timeLabel2Buffer);
     timeLabel2.resizeToCurrentText();
     timeLabel2.setTypedText(touchgfx::TypedText(T_TIMEL2));
-    add(timeLabel2);
 
     timeLabel1.setXY(84, 183);
     timeLabel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -95,16 +88,14 @@ customGraphBase::customGraphBase() :
     timeLabel1.setWildcard(timeLabel1Buffer);
     timeLabel1.resizeToCurrentText();
     timeLabel1.setTypedText(touchgfx::TypedText(T_TIMEL1));
-    add(timeLabel1);
 
     dateLabel.setXY(248, 3);
     dateLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     dateLabel.setLinespacing(0);
-    Unicode::snprintf(dateLabelBuffer, DATELABEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_WAHU).getText());
+    dateLabelBuffer[0] = 0;
     dateLabel.setWildcard(dateLabelBuffer);
     dateLabel.resizeToCurrentText();
     dateLabel.setTypedText(touchgfx::TypedText(T_DATE));
-    add(dateLabel);
 
     y_axisName.setXY(29, 1);
     y_axisName.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -112,18 +103,33 @@ customGraphBase::customGraphBase() :
     y_axisNameBuffer[0] = 0;
     y_axisName.setWildcard(y_axisNameBuffer);
     y_axisName.resizeToCurrentText();
-    y_axisName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_627Q));
+    y_axisName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8JSV));
+
+    add(box1);
+    add(graph1);
+    add(debugText);
+    add(timeLabel4);
+    add(timeLabel3);
+    add(timeLabel2);
+    add(timeLabel1);
+    add(dateLabel);
     add(y_axisName);
-}
-
-customGraphBase::~customGraphBase()
-{
-
 }
 
 void customGraphBase::initialize()
 {
 
+}
+
+void customGraphBase::graphClickedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphClickEvent& value)
+{
+    if (&src == &graph1)
+    {
+        //Interaction2
+        //When graph1 clicked call virtual function
+        //Call graph1clicked
+        graph1clicked(value);
+    }
 }
 
 void customGraphBase::graphDraggedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphDragEvent& value)
@@ -137,13 +143,3 @@ void customGraphBase::graphDraggedCallbackHandler(const touchgfx::AbstractDataGr
     }
 }
 
-void customGraphBase::graphClickedCallbackHandler(const touchgfx::AbstractDataGraph& src, const touchgfx::AbstractDataGraph::GraphClickEvent& value)
-{
-    if (&src == &graph1)
-    {
-        //Interaction2
-        //When graph1 clicked call virtual function
-        //Call graph1clicked
-        graph1clicked(value);
-    }
-}

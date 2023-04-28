@@ -21,28 +21,21 @@
 #include <touchgfx/hal/GPIO.hpp>
 
 /**
- * GPIO_ID Enum
- * The signals represented by this enum are used by TouchGFX framework to signal internal events.
+ * GPIO_ID Enum, these are used bt TouchGFX framework to signal events.
  *
  * VSYNC_FREQ,  /// Pin is toggled at each VSYNC
  * RENDER_TIME, /// Pin is high when frame rendering begins, low when finished
  * FRAME_RATE,  /// Pin is toggled when the frame buffers are swapped.
  * MCU_ACTIVE   /// Pin is high when framework is utilizing the MCU.
  *
- * Configure GPIO's with the same name as the GPIO_IDs above, as output, in CubeMX to export
- * the signals for performance measuring. See support.touchgfx.com for further details.
- *
  */
 
 /* USER CODE BEGIN TouchGFXGPIO.cpp */
 #include "stm32h7xx.h"
-#include "../../Core/Inc/main.h"
+#include "main.h"
 
 /* USER CODE BEGIN user includes */
-// VSYNC_FREQ  - Pin PJ3 (D2)
-// RENDER_TIME - Pin PJ8 (D1)
-// FRAME_RATE  - Pin PJ9 (D0)
-// MCU_ACTIVE  - Pin PF8 (D3)
+
 /* USER CODE END user includes */
 
 using namespace touchgfx;
@@ -87,8 +80,8 @@ void GPIO::set(GPIO_ID id)
 #endif
         break;
     case GPIO::FRAME_RATE:
-#if defined(FRAME_RATE_GPIO_Port) && defined(FRAME_RATE_Pin)
-        HAL_GPIO_WritePin(FRAME_RATE_GPIO_Port, FRAME_RATE_Pin, M_GPIO_PIN_SET(id));
+#if defined(FRAME_RATE_Port) && defined(FRAME_RATE_Pin)
+        HAL_GPIO_WritePin(FRAME_RATE_Port, FRAME_RATE_Pin, M_GPIO_PIN_SET(id));
 #endif
         break;
     case GPIO::MCU_ACTIVE:
@@ -117,8 +110,8 @@ void GPIO::clear(GPIO_ID id)
 #endif
         break;
     case GPIO::FRAME_RATE:
-#if defined(FRAME_RATE_GPIO_Port) && defined(FRAME_RATE_Pin)
-        HAL_GPIO_WritePin(FRAME_RATE_GPIO_Port, FRAME_RATE_Pin, M_GPIO_PIN_RESET(id));
+#if defined(FRAME_RATE_Port) && defined(FRAME_RATE_Pin)
+        HAL_GPIO_WritePin(FRAME_RATE_Port, FRAME_RATE_Pin, M_GPIO_PIN_RESET(id));
 #endif
         break;
     case GPIO::MCU_ACTIVE:
@@ -147,8 +140,8 @@ void GPIO::toggle(GPIO_ID id)
 #endif
         break;
     case GPIO::FRAME_RATE:
-#if defined(FRAME_RATE_GPIO_Port) && defined(FRAME_RATE_Pin)
-        HAL_GPIO_TogglePin(FRAME_RATE_GPIO_Port, FRAME_RATE_Pin);
+#if defined(FRAME_RATE_Port) && defined(FRAME_RATE_Pin)
+        HAL_GPIO_TogglePin(FRAME_RATE_Port, FRAME_RATE_Pin);
 #endif
         break;
     case GPIO::MCU_ACTIVE:
@@ -178,8 +171,8 @@ bool GPIO::get(GPIO_ID id)
 #endif
         break;
     case GPIO::FRAME_RATE:
-#if defined(FRAME_RATE_GPIO_Port) && defined(FRAME_RATE_Pin)
-        bitstatus = HAL_GPIO_ReadPin(FRAME_RATE_GPIO_Port, FRAME_RATE_Pin);
+#if defined(FRAME_RATE_Port) && defined(FRAME_RATE_Pin)
+        bitstatus = HAL_GPIO_ReadPin(FRAME_RATE_Port, FRAME_RATE_Pin);
 #endif
         break;
     case GPIO::MCU_ACTIVE:
